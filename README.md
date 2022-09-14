@@ -11,14 +11,6 @@ Compose is a tool for defining and running multi-container Docker applications. 
 # What is a docker-file ?
 Docker can build images automatically by reading the instructions from a Dockerfile. A Dockerfile is a text document that contains all the commands a user could call on the command line to assemble an image. Using docker build users can create an automated build that executes several command-line instructions in succession.
 
-Here are the most common types of instructions:
-
-FROM <image> - defines a base for your image.
-RUN <command> - executes any commands in a new layer on top of the current image and commits the result. RUN also has a shell form for running commands.
-WORKDIR <directory> - sets the working directory for any RUN, CMD, ENTRYPOINT, COPY, and ADD instructions that follow it in the Dockerfile.
-COPY <src> <dest> - copies new files or directories from <src> and adds them to the filesystem of the container at the path <dest>.
-CMD <command> - lets you define the default program that is run once you start the container based on this image. Each Dockerfile only has one CMD, and only the last CMD instance is respected when multiple exist.
-
 # What is a docker-build ?
 Dockerfiles are text files containing instructions. Dockerfiles adhere to a specific format and contain a set of instructions for which you can find a full reference in the Dockerfile reference.
 Docker builds images by reading the instructions from a Dockerfile.
@@ -32,7 +24,49 @@ I had to install docker. First, you need:
 - I installed docker on the machine
 - I tested to run a dockerfile thanks to the command docker run hello-world
 
-# Important command to use docker
+# Important commands to use docker
+
+	# docker
 - docker ps or docker ps -a show the names of all the containers you have + the id you need and the port associated.
-- docker run "name of the docker file" to run the docker
--
+- docker pull "NameOfTheImage", pull an image from dockerhub
+- docker logs 025, show the logs of your last run of dockers
+- docker rm $(docker ps -a -q) allow to delete all the opened images
+
+
+	# docker run
+- docker run "name of the docker image" to run the docker image
+- docker run -d, run container in background
+- docker run -p, publish a container's port to the host
+- docker run -P, publish all exposed port to random ports
+- docker run -it "imageName", le programme continuera de fonctionner et on pourra interagir avec le container
+- docker run -name sl mysql, give a name for the container instead an ID
+
+	# docker image
+- docker image rm -f image name/id, delete the image, if the image is running you need to kill it first.
+- docker image kill name, stop a running image,
+
+# How to write a docker file
+- Create a filename dockerfile
+- Write your command inside the doc
+- Build the dockerfile with the command "dockerfile build -t "nameYouChoose".
+- Execute the dockerfile with the command: docker run "nameYouChoose"
+
+Here are the most common types of instructions:
+
+FROM <image> - defines a base for your image. exemple : FROM debian
+RUN <command> - executes any commands in a new layer on top of the current image and commits the result. RUN also has a shell form for running commands.
+WORKDIR <directory> - sets the working directory for any RUN, CMD, ENTRYPOINT, COPY, and ADD instructions that follow it in the Dockerfile. (You go directly in the directy you choose)
+COPY <src> <dest> - copies new files or directories from <src> and adds them to the filesystem of the container at the path <dest>.
+CMD <command> - lets you define the default program that is run once you start the container based on this image. Each Dockerfile only has one CMD, and only the last CMD instance is respected when multiple exist.
+
+# How to launch a localhost webpage to test it
+Video tutorial : https://www.youtube.com/watch?v=F2il_Mo5yww&ab_channel=linuxxraza
+- Create a HTML file with some code in it.
+- Create you dockerfile
+	- The image will be NGINX : FROM NGINX
+	- Use COPY to copy your files into the html directory on NGINX
+- Use the command "docker build -t simple ."
+- Use the command "docker container run --name=5th-try -d -p 9000:80 simple"
+	- --name is to give a name to your image
+	- -d run the container in background
+	- -p publish the container's port to the host. In that case 9000 to 80
