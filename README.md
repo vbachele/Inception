@@ -31,6 +31,7 @@ I had to install docker. First, you need:
 - docker pull "NameOfTheImage", pull an image from dockerhub
 - docker logs 025, show the logs of your last run of dockers
 - docker rm $(docker ps -a -q) allow to delete all the opened images
+- docker exec -it 8ac sh, to execute the program
 
 
 	# docker run
@@ -70,3 +71,9 @@ Video tutorial : https://www.youtube.com/watch?v=F2il_Mo5yww&ab_channel=linuxxra
 	- --name is to give a name to your image
 	- -d run the container in background
 	- -p publish the container's port to the host. In that case 9000 to 80
+
+# How to set up NGINX (our web server)
+Nginx is a webserver which stores hmtl, js, images files and use http request to display a website.
+Nginx conf documents will be used for config our server and the right proxy connexion.
+#	Command for nginx
+https://www.nginx.com/resources/wiki/start/topics/tutorials/commandline/
