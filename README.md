@@ -41,6 +41,7 @@ I had to install docker. First, you need:
 - docker run -P, publish all exposed port to random ports
 - docker run -it "imageName", le programme continuera de fonctionner et on pourra interagir avec le container
 - docker run -name sl mysql, give a name for the container instead an ID
+- docker run -d -p 7000:80 test:latest
 
 	# docker image
 - docker image rm -f image name/id, delete the image, if the image is running you need to kill it first.
@@ -77,3 +78,7 @@ Nginx is a webserver which stores hmtl, js, images files and use http request to
 Nginx conf documents will be used for config our server and the right proxy connexion.
 #	Command for nginx
 https://www.nginx.com/resources/wiki/start/topics/tutorials/commandline/
+- nginx -t = test your configuration file
+
+# Useful things to have
+- I installed Ohmyzsh - check my dockerfile to see the command
