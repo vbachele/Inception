@@ -62,7 +62,7 @@ COPY <src> <dest> - copies new files or directories from <src> and adds them to 
 CMD <command> - lets you define the default program that is run once you start the container based on this image. Each Dockerfile only has one CMD, and only the last CMD instance is respected when multiple exist.
 
 # How to launch a localhost webpage to test it
-Video tutorial : https://www.youtube.com/watch?v=F2il_Mo5yww&ab_channel=linuxxraza
+Video tutorial : <https://www.youtube.com/watch?v=F2il_Mo5yww&ab_channel=linuxxraza>
 - Create a HTML file with some code in it.
 - Create you dockerfile
 	- The image will be NGINX : FROM NGINX
@@ -74,16 +74,16 @@ Video tutorial : https://www.youtube.com/watch?v=F2il_Mo5yww&ab_channel=linuxxra
 	- -p publish the container's port to the host. In that case 9000 to 80
 
 # How to set up NGINX (our web server)
-Tutorial : http://nginx.org/en/docs/beginners_guide.html
+Tutorial : <http://nginx.org/en/docs/beginners_guide.html>
 Nginx is a webserver which stores hmtl, js, images files and use http request to display a website.
 Nginx conf documents will be used for config our server and the right proxy connexion.
 #	Command for nginx
-https://www.nginx.com/resources/wiki/start/topics/tutorials/commandline/
+<https://www.nginx.com/resources/wiki/start/topics/tutorials/commandline/>
 - nginx -t = test your configuration file
 
 # configure .conf file on nginx
-location explanations : https://www.digitalocean.com/community/tutorials/nginx-location-directive
-What is a proxy server : https://www.varonis.com/fr/blog/serveur-proxy
+location explanations : <https://www.digitalocean.com/community/tutorials/nginx-location-directive>
+What is a proxy server : <https://www.varonis.com/fr/blog/serveur-proxy>
 - Listen will indicate to the server which requewt he has to accept:
 	Listen can take ports and adresses : exemple Listen 80;
 - The location directive within NGINX server block allows to route request to correct location within the file system. The directive is used to tell NGINX where to look for a resource by including files and folders while matching a location block against an URL.
