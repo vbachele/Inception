@@ -26,7 +26,7 @@ I had to install docker. First, you need:
 
 # Important commands to use docker
 
-	# docker
+	## docker
 - docker ps or docker ps -a show the names of all the containers you have + the id you need and the port associated.
 - docker pull "NameOfTheImage", pull an image from dockerhub
 - docker logs 025, show the logs of your last run of dockers
@@ -34,7 +34,7 @@ I had to install docker. First, you need:
 - docker exec -it 8ac sh, to execute the program
 
 
-	# docker run
+	## docker run
 - docker run "name of the docker image" to run the docker image
 - docker run -d, run container in background
 - docker run -p, publish a container's port to the host
@@ -43,7 +43,7 @@ I had to install docker. First, you need:
 - docker run -name sl mysql, give a name for the container instead an ID
 - docker run -d -p 7000:80 test:latest
 
-	# docker image
+	## docker image
 - docker image rm -f image name/id, delete the image, if the image is running you need to kill it first.
 - docker image kill name, stop a running image,
 
@@ -73,22 +73,25 @@ Video tutorial : <https://www.youtube.com/watch?v=F2il_Mo5yww&ab_channel=linuxxr
 	- -d run the container in background
 	- -p publish the container's port to the host. In that case 9000 to 80
 
-# How to set up NGINX (our web server)
+# NGINX
+
+## How to set up NGINX (our web server)
 Tutorial : <http://nginx.org/en/docs/beginners_guide.html>
 Nginx is a webserver which stores hmtl, js, images files and use http request to display a website.
 Nginx conf documents will be used for config our server and the right proxy connexion.
-#	Command for nginx
+
+##	Command for nginx
 <https://www.nginx.com/resources/wiki/start/topics/tutorials/commandline/>
 - nginx -t = test your configuration file
 
-# configure .conf file on nginx
+## configure .conf file on nginx
 location explanations : <https://www.digitalocean.com/community/tutorials/nginx-location-directive>
 What is a proxy server : <https://www.varonis.com/fr/blog/serveur-proxy>
 - Listen will indicate to the server which requewt he has to accept:
 	Listen can take ports and adresses : exemple Listen 80;
 - The location directive within NGINX server block allows to route request to correct location within the file system. The directive is used to tell NGINX where to look for a resource by including files and folders while matching a location block against an URL.
 
-# Steps to add in localhost by configuring
+## Steps to add in localhost by configuring
 1. I added to my /var/www/ directory an index html file
 2. I configured the default file in etc/nginx/site-enabled/default
 3. I added a server bracket with a location to var/www/ in the doc. Save it and reload nginx with 'nginx -s reload'.
@@ -96,5 +99,5 @@ What is a proxy server : <https://www.varonis.com/fr/blog/serveur-proxy>
 
 ![nginxLocalImage](images/nginxLocalImages.png)
 
-# Useful things to have
+# Useful things to know about dockers and containers
 - I installed Ohmyzsh - check my dockerfile to see the command
