@@ -1,0 +1,12 @@
+server {
+    listen 80;
+    root /var/www/html;
+    index index.html index.htm index.nginx-debian.html;
+
+    location / {
+        try_files $uri $uri/ =404;
+    }
+    location /images/ {
+        root /var;
+    }
+}

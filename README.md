@@ -61,7 +61,7 @@ I had to install docker. First, you need:
 ## How to write a docker file
 - Create a filename dockerfile
 - Write your command inside the doc
-- Build the dockerfile with the command "dockerfile build -t "nameYouChoose".
+- Build the dockerfile with the command "docker build -t "nameYouChoose"."
 - Execute the dockerfile with the command: docker run "nameYouChoose"
 
 Here are the most common types of instructions:
@@ -96,8 +96,12 @@ Nginx conf documents will be used for config our server and the right proxy conn
 - nginx -t = test your configuration file
 
 ## configure .conf file on nginx
+### useful nginx links
 location explanations : <https://www.digitalocean.com/community/tutorials/nginx-location-directive>
 What is a proxy server : <https://www.varonis.com/fr/blog/serveur-proxy>
+All nginx definitions : <http://nginx.org/en/docs/http/ngx_http_core_module.html>
+
+### Listen && Location
 - Listen will indicate to the server which requewt he has to accept:
 	Listen can take ports and adresses : exemple Listen 80;
 - The location directive within NGINX server block allows to route request to correct location within the file system. The directive is used to tell NGINX where to look for a resource by including files and folders while matching a location block against an URL.
