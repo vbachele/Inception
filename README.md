@@ -74,11 +74,27 @@ Video tutorial : https://www.youtube.com/watch?v=F2il_Mo5yww&ab_channel=linuxxra
 	- -p publish the container's port to the host. In that case 9000 to 80
 
 # How to set up NGINX (our web server)
+Tutorial : http://nginx.org/en/docs/beginners_guide.html
 Nginx is a webserver which stores hmtl, js, images files and use http request to display a website.
 Nginx conf documents will be used for config our server and the right proxy connexion.
 #	Command for nginx
 https://www.nginx.com/resources/wiki/start/topics/tutorials/commandline/
 - nginx -t = test your configuration file
+
+# configure .conf file on nginx
+location explanations : https://www.digitalocean.com/community/tutorials/nginx-location-directive
+What is a proxy server : https://www.varonis.com/fr/blog/serveur-proxy
+- Listen will indicate to the server which requewt he has to accept:
+	Listen can take ports and adresses : exemple Listen 80;
+- The location directive within NGINX server block allows to route request to correct location within the file system. The directive is used to tell NGINX where to look for a resource by including files and folders while matching a location block against an URL.
+
+# Steps to add in localhost by configuring
+1. I added to my /var/www/ directory an index html file
+2. I configured the default file in etc/nginx/site-enabled/default
+3. I added a server bracket with a location to var/www/ in the doc. Save it and reload nginx with 'nginx -s reload'.
+4. Because the port host I put when I built was 7000. go to a web page and put: http://localhost:7000/. It works!!!!
+
+![nginxLocalImage](http://url/to/img.png)
 
 # Useful things to have
 - I installed Ohmyzsh - check my dockerfile to see the command
