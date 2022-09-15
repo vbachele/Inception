@@ -94,7 +94,7 @@ What is a proxy server : https://www.varonis.com/fr/blog/serveur-proxy
 3. I added a server bracket with a location to var/www/ in the doc. Save it and reload nginx with 'nginx -s reload'.
 4. Because the port host I put when I built was 7000. go to a web page and put: http://localhost:7000/. It works!!!!
 
-![nginxLocalImage](http://url/to/img.png)
+![nginxLocalImage](images/nginxLocalImages.png)
 
 # Useful things to have
 - I installed Ohmyzsh - check my dockerfile to see the command
