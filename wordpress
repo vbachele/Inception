@@ -1,3 +1,0 @@
-FROM wordpress
-
-CMD ("echo", "JE SUIS DANS WORDPRESS")

@@ -104,15 +104,40 @@ All nginx definitions : <http://nginx.org/en/docs/http/ngx_http_core_module.html
 ### Listen && Location
 - Listen will indicate to the server which requewt he has to accept:
 	Listen can take ports and adresses : exemple Listen 80;
-- The location directive within NGINX server block allows to route request to correct location within the file system. The directive is used to tell NGINX where to look for a resource by including files and folders while matching a location block against an URL.
+- The location directive within NGINX server block allows to route request to correct location within the file system. 
+	The directive is used to tell NGINX where to look for a resource by including files and folders while matching a location block against an URL.
 
 ## Steps to add in localhost by configuring
 1. I added to my /var/www/ directory an index html file
 2. I configured the default file in etc/nginx/site-enabled/default
 3. I added a server bracket with a location to var/www/ in the doc. Save it and reload nginx with 'nginx -s reload'.
 4. Because the port host I put when I built was 7000. go to a web page and put: http://localhost:7000/. It works!!!!
-
 ![nginxLocalImage](images/nginxLocalImages.png)
+
+## Fastcgi (or how to process PHP with nginx)
+[What is http](https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol)
+[difference between http && tcp](https://www.goanywhere.com/blog/http-vs-tcp-whats-the-difference#:~:text=TCP%20contains%20information%20about%20what,data%20in%20the%20stream%20contains.)
+[PHP Fast CGI Example](https://www.nginx.com/resources/wiki/start/topics/examples/phpfcgi/)
+[Why using fastcgi_pass 127.0.0.1:9000](https://serverfault.com/questions/1094793/what-is-this-nginx-location-for-php-fpm-fastcgi-pass-127-0-0-19000-really-doing)
+[Install Nginx with php-fpm in video](https://www.youtube.com/watch?v=I_9-xWmkh28&ab_channel=ProgramWithGio)
+- PHP-FPM (for fast-cgi Process Manager) runs as an isolated service when you use PHP-FPM. 
+	Employing this PHP version as the language interpreter means requests will be processed via a TCP/IP socket,
+	and the Nginx server handles HTTP requests only, while PHP-FPM interprets the PHP code. Taking advantage of two separate services is vital to become more efficient.
+	It features with Wordpress
+
+# Docker-compose
+[tutorial open classroom dockercompose](https://openclassrooms.com/fr/courses/2035766-optimisez-votre-deploiement-en-creant-des-conteneurs-avec-docker/6211624-decouvrez-et-installez-docker-compose
+
+## Docker-Compose commands
+- docker-compose up -d, *Create all the containers and they still run in background*
+- docker-compose ps, *Check the status for all the containers*
+- docker-compose logs -f --tail 5, *see the 5 first lines of the logs of your containers*
+- docker-compose stop , *stop a stack of your docker compose*
+- Docker-compose down, *destroy all your ressources 
+- docker-compose config, *check the syntax of you docker-compose file*
+
+## Inside the docker-compose file
+All the information about what does mean every line are in [tutorial](https://openclassrooms.com/fr/courses/2035766-optimisez-votre-deploiement-en-creant-des-conteneurs-avec-docker/6211677-creez-un-fichier-docker-compose-pour-orchestrer-vos-conteneurs)
 
 # Useful things to know about dockers and containers
 - I installed Ohmyzsh - check my dockerfile to see the command
