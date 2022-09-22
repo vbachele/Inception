@@ -114,12 +114,17 @@ All nginx definitions : <http://nginx.org/en/docs/http/ngx_http_core_module.html
 4. Because the port host I put when I built was 7000. go to a web page and put: http://localhost:7000/. It works!!!!
 ![nginxLocalImage](images/nginxLocalImages.png)
 
+## How to change your localhost by vbachele.42.fr
+1. Go to the file /etc/hosts
+2. Add the following line : "127.0.0.1 vbachele.42.fr"
+
 ## Fastcgi (or how to process PHP with nginx)
 [What is http](https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol)
 [difference between http && tcp](https://www.goanywhere.com/blog/http-vs-tcp-whats-the-difference#:~:text=TCP%20contains%20information%20about%20what,data%20in%20the%20stream%20contains.)
 [PHP Fast CGI Example](https://www.nginx.com/resources/wiki/start/topics/examples/phpfcgi/)
 [Why using fastcgi_pass 127.0.0.1:9000](https://serverfault.com/questions/1094793/what-is-this-nginx-location-for-php-fpm-fastcgi-pass-127-0-0-19000-really-doing)
 [Install Nginx with php-fpm in video](https://www.youtube.com/watch?v=I_9-xWmkh28&ab_channel=ProgramWithGio)
+[Fast CGI explanations commands](https://www.digitalocean.com/community/tutorials/understanding-and-implementing-fastcgi-proxying-in-nginx)
 - PHP-FPM (for fast-cgi Process Manager) runs as an isolated service when you use PHP-FPM. 
 	Employing this PHP version as the language interpreter means requests will be processed via a TCP/IP socket,
 	and the Nginx server handles HTTP requests only, while PHP-FPM interprets the PHP code. Taking advantage of two separate services is vital to become more efficient.
@@ -129,7 +134,7 @@ All nginx definitions : <http://nginx.org/en/docs/http/ngx_http_core_module.html
 [tutorial open classroom dockercompose](https://openclassrooms.com/fr/courses/2035766-optimisez-votre-deploiement-en-creant-des-conteneurs-avec-docker/6211624-decouvrez-et-installez-docker-compose
 
 ## Docker-Compose commands
-- docker-compose up -d, *Create all the containers and they still run in background*
+- docker-compose up -d --build, *Create and build all the containers and they still run in background*
 - docker-compose ps, *Check the status for all the containers*
 - docker-compose logs -f --tail 5, *see the 5 first lines of the logs of your containers*
 - docker-compose stop , *stop a stack of your docker compose*

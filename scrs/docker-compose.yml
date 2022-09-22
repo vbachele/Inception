@@ -8,40 +8,50 @@ services:
       context: ./nginx
     container_name: nginx
     restart: unless-stopped
+    working_dir: /var/www
     volumes:
-      - /var/www/wordpress
+      - /var/www/
     ports:
       - 443:443
-    restart: unless-stopped
-
-  mariadb:
-    container_name: mariadb
-    image: mariadb
-    #volumes allow to store in a persistent disk the content in a local disk
-    #db_data is a volume created by docker directly
-    volumes:
-      - mariadb_data:/var/lib/mariadb
-    # in case of problem we restart automatically the container
+  app:
+    build:
+      context: ./php
     restart: always
-    #We give the value to some env variable for mySQL
-    environment:
-      MARIADB_ROOT_PASSWORD: somewordpress
-      MARIADB_DATABASE: wordpress
-      MARIADB_USER: wordpress
-      MARIADB_PASSWORD: wordpress
+    working_dir: /var/www/
+    volumes:
+      - /var/www
 
-  wordpress:
-    container_name: wordpress
-    #Create a depedency between the 2 container, db will be launched before
-    depends_on:
-      - mariadb
-    image: wordpress:latest
-    restart: unless-stopped
-    environment:
-      WORDPRESS_DB_HOST: mariadb:3306 #port 3306 to connect mariadb to wordpress
-      WORDPRESS_DB_USER: wordpress
-      WORDPRESS_DB_PASSWORD: wordpress
-      WORDPRESS_DB_NAME: wordpress
 
-volumes:
-  mariadb_data: {}
+#   mariadb:
+#     container_name: mariadb
+#     image: mariadb
+#     #volumes allow to store in a persistent disk the content in a local disk
+#     #db_data is a volume created by docker directly
+#     volumes:
+#       - mariadb_data:/var/lib/mariadb
+#     # in case of problem we restart automatically the container
+#     restart: always
+#     #We give the value to some env variable for mySQL
+#     environment:
+#       MARIADB_ROOT_PASSWORD: somewordpress
+#       MARIADB_DATABASE: wordpress
+#       MARIADB_USER: wordpress
+#       MARIADB_PASSWORD: wordpress
+
+#   wordpress:
+#     container_name: wordpress
+#     #Create a depedency between the 2 container, db will be launched before
+#     depends_on:
+#       - mariadb
+#     image: wordpress:latest
+#     ports: 
+#       - 9000:443
+#     restart: unless-stopped
+#     environment:
+#       WORDPRESS_DB_HOST: mariadb:3306 #port 3306 to connect mariadb to wordpress
+#       WORDPRESS_DB_USER: wordpress
+#       WORDPRESS_DB_PASSWORD: wordpress
+#       WORDPRESS_DB_NAME: wordpress
+
+# volumes:
+#   mariadb_data: {}
