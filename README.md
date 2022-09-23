@@ -144,5 +144,35 @@ All nginx definitions : <http://nginx.org/en/docs/http/ngx_http_core_module.html
 ## Inside the docker-compose file
 All the information about what does mean every line are in [tutorial](https://openclassrooms.com/fr/courses/2035766-optimisez-votre-deploiement-en-creant-des-conteneurs-avec-docker/6211677-creez-un-fichier-docker-compose-pour-orchestrer-vos-conteneurs)
 
+# Wordpress Part
+[what is the wordpress CLI](https://www.dreamhost.com/wordpress/guide-to-wp-cli/#:~:text=The%20WP%2DCLI%20is%20a,faster%20using%20the%20WP%2DCLI.)
+[Know more about wp-config.php](https://wpformation.com/wp-config-php-et-functions-php-fichiers-wordpress/)
+[php-fpm - www.conf](https://myjeeva.com/php-fpm-configuration-101.html)
+
+*definitions* 
+*wp-config.php* This file tells to your database how to get your file and how to treat them
+## What are the steps to create your Wordpress 
+1. Create you dockerfile image
+	- Download php-fpm
+	- Copy the www.conf file in html directory
+	- Create the php directory to enable php-fpm to run
+	- Copy the script and launch it
+	- Go to the html directory
+	- Launch php-fpm
+
+2. Create a script
+	- Download wordpress
+	- Create the configuration file of wordpress
+	- Give environmental variable
+
+3. Create a www.conf
+
+### Dockerfile
+
+### script
+
+### www.conf
+You need to edit www.conf and place it to /etc/php/7.3(the usual version of php on 42 vm)/fpm/pool.d and wp-content.php to disable access wordpress installation page when you access your site at https://login.42.fr
+
 # Useful things to know about dockers and containers
 - I installed Ohmyzsh - check my dockerfile to see the command

@@ -1,57 +1,72 @@
-version: '3'
+version: '3.8'
 # version of docker-compose the most used
 
 #here we declare each services
+networks:
+  network:
+    driver: bridge
+
 services:
+  mariadb:
+    container_name: mariadb
+    image: mariadb
+    #volumes allow to store in a persistent disk the content in a local disk
+    #db_data is a volume created by docker directly
+    volumes:
+      - mariadb_data:/var/lib/mysql
+    # in case of problem we restart automatically the container
+    env_file:
+      - .env
+    networks:
+      - network
+    ports:
+      - 3306:3306
+    restart: always
+    #We give the value to some env variable for mySQL
+    # environment:
+    #   MARIADB_ROOT_PASSWORD: somewordpress
+    #   MARIADB_DATABASE: wordpress
+    #   MARIADB_USER: wordpress
+    #   MARIADB_PASSWORD: wordpress
+
+
+  wordpress:
+    container_name: wordpress
+    #Create a depedency between the 2 container, db will be launched before
+    depends_on:
+      - mariadb
+    #image: wordpress:latest
+    build: 
+      context: ./wordpress
+      dockerfile: dockerfile
+    restart: unless-stopped
+    env_file:
+      - .env
+    #ports:
+     # - "9000:9000"
+    volumes:
+      - wordpress_data:/var/www/html
+    # environment:
+    #   WORDPRESS_DB_HOST: mariadb:3306 #port 3306 to connect mariadb to wordpress
+    #   WORDPRESS_DB_USER: wordpress
+    #   WORDPRESS_DB_PASSWORD: wordpress
+    #   WORDPRESS_DB_NAME: wordpress
+    networks:
+      - network
+
   nginx:
     build: 
-      context: ./nginx
+     context: ./nginx
+     dockerfile: dockerfile
     container_name: nginx
-    restart: unless-stopped
-    working_dir: /var/www
-    volumes:
-      - /var/www/
     ports:
-      - 443:443
-  app:
-    build:
-      context: ./php
-    restart: always
-    working_dir: /var/www/
+      - "443:443"
     volumes:
-      - /var/www
+      - wordpress_data:/var/www/html
+    restart: always
+    networks:
+      - network
 
-
-#   mariadb:
-#     container_name: mariadb
-#     image: mariadb
-#     #volumes allow to store in a persistent disk the content in a local disk
-#     #db_data is a volume created by docker directly
-#     volumes:
-#       - mariadb_data:/var/lib/mariadb
-#     # in case of problem we restart automatically the container
-#     restart: always
-#     #We give the value to some env variable for mySQL
-#     environment:
-#       MARIADB_ROOT_PASSWORD: somewordpress
-#       MARIADB_DATABASE: wordpress
-#       MARIADB_USER: wordpress
-#       MARIADB_PASSWORD: wordpress
-
-#   wordpress:
-#     container_name: wordpress
-#     #Create a depedency between the 2 container, db will be launched before
-#     depends_on:
-#       - mariadb
-#     image: wordpress:latest
-#     ports: 
-#       - 9000:443
-#     restart: unless-stopped
-#     environment:
-#       WORDPRESS_DB_HOST: mariadb:3306 #port 3306 to connect mariadb to wordpress
-#       WORDPRESS_DB_USER: wordpress
-#       WORDPRESS_DB_PASSWORD: wordpress
-#       WORDPRESS_DB_NAME: wordpress
-
-# volumes:
-#   mariadb_data: {}
+volumes:
+  mariadb_data: {}
+  wordpress_data: {}
