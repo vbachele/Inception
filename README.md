@@ -4,10 +4,9 @@ This project aims to broaden your knowledge of system administration by using Do
 # SUMMARY
 
 ### 1. [Definitions](https://github.com/vincentbachelet-collab/Inception/blob/main/README.md#definitions)
-### 2. [Docker](https://github.com/vincentbachelet-collab/Inception/blob/main/README.md#Docker)
+### 2. [DOCKER](https://github.com/vincentbachelet-collab/Inception/blob/main/README.md#Docker)
 ### 3. [NGINX](https://github.com/vincentbachelet-collab/Inception/blob/main/README.md#NGINX)
-
-
+### 4. [MARIADB](https://github.com/vincentbachelet-collab/Inception/blob/main/README.md#MARIADB)
 
 # Definitions
 ## What is a docker ?
@@ -37,13 +36,12 @@ I had to install docker. First, you need:
 
 ## Important commands to use docker
 
-## docker
+## general docker commands
 - docker ps or docker ps -a show the names of all the containers you have + the id you need and the port associated.
 - docker pull "NameOfTheImage", pull an image from dockerhub
 - docker logs 025, show the logs of your last run of dockers
 - docker rm $(docker ps -a -q) allow to delete all the opened images
 - docker exec -it 8ac sh, to execute the program
-
 
 ## docker run
 - docker run "name of the docker image" to run the docker image
@@ -144,7 +142,7 @@ All nginx definitions : <http://nginx.org/en/docs/http/ngx_http_core_module.html
 ## Inside the docker-compose file
 All the information about what does mean every line are in [tutorial](https://openclassrooms.com/fr/courses/2035766-optimisez-votre-deploiement-en-creant-des-conteneurs-avec-docker/6211677-creez-un-fichier-docker-compose-pour-orchestrer-vos-conteneurs)
 
-# Wordpress Part
+# WORDPRESS
 [what is the wordpress CLI](https://www.dreamhost.com/wordpress/guide-to-wp-cli/#:~:text=The%20WP%2DCLI%20is%20a,faster%20using%20the%20WP%2DCLI.)
 [Know more about wp-config.php](https://wpformation.com/wp-config-php-et-functions-php-fichiers-wordpress/)
 [php-fpm - www.conf](https://myjeeva.com/php-fpm-configuration-101.html)
@@ -154,7 +152,7 @@ All the information about what does mean every line are in [tutorial](https://op
 ## What are the steps to create your Wordpress 
 1. Create you dockerfile image
 	- Download php-fpm
-	- Copy the www.conf file in html directory
+	- Copy the www.conf file in php/7.3/fpm/pool.d/
 	- Create the php directory to enable php-fpm to run
 	- Copy the script and launch it
 	- Go to the html directory
@@ -163,16 +161,15 @@ All the information about what does mean every line are in [tutorial](https://op
 2. Create a script
 	- Download wordpress
 	- Create the configuration file of wordpress
-	- Give environmental variable
+	- Move files from wordpress in the html directory
+	- Give the 4th environmental variables for wordpress
 
-3. Create a www.conf
-
-### Dockerfile
-
-### script
-
-### www.conf
+3. Create a www.conf 
 You need to edit www.conf and place it to /etc/php/7.3(the usual version of php on 42 vm)/fpm/pool.d and wp-content.php to disable access wordpress installation page when you access your site at https://login.42.fr
+	- Put listen = 0.0.0.0:9000 to listen all the ports
+	- Increase the number for the pm values in order to avoid a 502 page
+
+# MARIADB 
 
 # Useful things to know about dockers and containers
 - I installed Ohmyzsh - check my dockerfile to see the command
