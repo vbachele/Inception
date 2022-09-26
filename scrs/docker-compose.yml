@@ -1,12 +1,20 @@
-version: '3.8'
+version: '3'
 
-#here we declare each services
-networks:
-  network:
-   driver: bridge
-
-#here we declare each services
 services:
+  nginx:
+    container_name: nginx
+    build: ./nginx
+    ports:
+      - 443:443
+    #depends_on:
+    #  - mariadb
+     # - wordpress
+    volumes:
+      - wordpress_data:/var/www/html
+    restart: always
+    networks: 
+      - network
+
   mariadb:
     container_name: mariadb
     image: mariadb
@@ -15,13 +23,13 @@ services:
     volumes:
       - mariadb_data:/var/lib/mysql
     # in case of problem we restart automatically the container
-    env_file:
-      - .env
-    networks: ["network"]
+    networks: 
+      - network
     ports:
       - 3306:3306
     restart: always
-
+    env_file:
+      - .env
   wordpress:
     container_name: wordpress
     #Create a depedency between the 2 container, db will be launched before
@@ -31,30 +39,20 @@ services:
     build: 
       context: ./wordpress
       dockerfile: dockerfile
-    restart: unless-stopped
+    restart: always
     env_file:
       - .env
     ports:
-     - "9000:9000"
+     - 9000:9000
     volumes:
       - wordpress_data:/var/www/html
-    networks: ["network"]
-
-  nginx:
-    build: 
-     context: ./nginx
-     dockerfile: dockerfile
-    container_name: nginx
-    ports:
-      - "443:443"
-    depends_on:
-      - mariadb
-      - wordpress
-    volumes:
-      - wordpress_data:/var/www/html
-    restart: always
-    networks: ["network"]
+    networks: 
+      - network
 
 volumes:
   mariadb_data: {}
   wordpress_data: {}
+
+networks:
+  network:
+    driver: bridge
