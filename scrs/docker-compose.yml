@@ -1,11 +1,11 @@
 version: '3.8'
-# version of docker-compose the most used
 
 #here we declare each services
 networks:
   network:
-    driver: bridge
+   driver: bridge
 
+#here we declare each services
 services:
   mariadb:
     container_name: mariadb
@@ -17,42 +17,28 @@ services:
     # in case of problem we restart automatically the container
     env_file:
       - .env
-    networks:
-      - network
+    networks: ["network"]
     ports:
       - 3306:3306
     restart: always
-    #We give the value to some env variable for mySQL
-    # environment:
-    #   MARIADB_ROOT_PASSWORD: somewordpress
-    #   MARIADB_DATABASE: wordpress
-    #   MARIADB_USER: wordpress
-    #   MARIADB_PASSWORD: wordpress
-
 
   wordpress:
     container_name: wordpress
     #Create a depedency between the 2 container, db will be launched before
     depends_on:
       - mariadb
-    #image: wordpress:latest
+    #command: /usr/bin/mysql_secure_installation
     build: 
       context: ./wordpress
       dockerfile: dockerfile
     restart: unless-stopped
     env_file:
       - .env
-    #ports:
-     # - "9000:9000"
+    ports:
+     - "9000:9000"
     volumes:
       - wordpress_data:/var/www/html
-    # environment:
-    #   WORDPRESS_DB_HOST: mariadb:3306 #port 3306 to connect mariadb to wordpress
-    #   WORDPRESS_DB_USER: wordpress
-    #   WORDPRESS_DB_PASSWORD: wordpress
-    #   WORDPRESS_DB_NAME: wordpress
-    networks:
-      - network
+    networks: ["network"]
 
   nginx:
     build: 
@@ -61,11 +47,13 @@ services:
     container_name: nginx
     ports:
       - "443:443"
+    depends_on:
+      - mariadb
+      - wordpress
     volumes:
       - wordpress_data:/var/www/html
     restart: always
-    networks:
-      - network
+    networks: ["network"]
 
 volumes:
   mariadb_data: {}
