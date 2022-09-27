@@ -20,14 +20,8 @@ Compose is a tool for defining and running multi-container Docker applications. 
 ## What is a docker-file ?
 Docker can build images automatically by reading the instructions from a Dockerfile. A Dockerfile is a text document that contains all the commands a user could call on the command line to assemble an image. Using docker build users can create an automated build that executes several command-line instructions in succession.
 
-## What is a docker-build ?
-Dockerfiles are text files containing instructions. Dockerfiles adhere to a specific format and contain a set of instructions for which you can find a full reference in the Dockerfile reference.
-Docker builds images by reading the instructions from a Dockerfile.
-
-Docker images consist of read-only layers, each resulting from an instruction in the Dockerfile. Layers are stacked sequentially and each one is a delta representing the changes applied to the previous layer.
-
 ## How to install docker on MACOS
-For this project, I am on a mac so I don't need to use the virtual machine.
+For this project, I am on my personal mac so I don't need to use the virtual machine to use a sudo command.
 I had to install docker. First, you need:
 - I went directly to the docker website and I downloaded docker [Link to the website](https://docs.docker.com/desktop/install/mac-install/)
 - I installed docker on the machine
@@ -39,11 +33,11 @@ I had to install docker. First, you need:
 
 ## general docker commands
 ```c
-- docker ps or docker ps -a show the names of all the containers you have + the id you need and the port associated.
-- docker pull "NameOfTheImage", pull an image from dockerhub
-- docker "Three first letter of your docker" , show the logs of your last run of dockers
-- docker rm $(docker ps -a -q) allow to delete all the opened images
-- docker exec -it "Three first letter of your docker" sh, to execute the program 
+- docker ps or docker ps -a //show the names of all the containers you have + the id you need and the port associated.
+- docker pull "NameOfTheImage" // pull an image from dockerhub
+- docker "Three first letter of your docker" // show the logs of your last run of dockers
+- docker rm $(docker ps -a -q) //allow to delete all the opened images
+- docker exec -it "Three first letter of your docker" sh // to execute the program with the shell 
 ```
 
 ## docker run
@@ -179,5 +173,14 @@ You need to edit www.conf and place it to /etc/php/7.3(the usual version of php 
 
 # MARIADB 
 
-# Useful things to know about dockers and containers
+# Useful things to know about inception dockers and containers
 - I installed Ohmyzsh - check my dockerfile to see the command
+- On the mac, Apache service is installed by default. I deleted Apache from my computer to avoid any problem with nginx
+- If you are at 42 on their computer you should stop these services running by default 
+```c
+sudo service nginx stop
+sudo service mariadb stop
+sudo service apache2 stop
+sudo service mysql stop
+```
+
