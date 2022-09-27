@@ -65,11 +65,11 @@ I had to install docker. First, you need:
 
 Here are the most common types of instructions:
 
-FROM <image> - defines a base for your image. exemple : FROM debian
-RUN <command> - executes any commands in a new layer on top of the current image and commits the result. RUN also has a shell form for running commands.
-WORKDIR <directory> - sets the working directory for any RUN, CMD, ENTRYPOINT, COPY, and ADD instructions that follow it in the Dockerfile. (You go directly in the directy you choose)
-COPY <src> <dest> - copies new files or directories from <src> and adds them to the filesystem of the container at the path <dest>.
-CMD <command> - lets you define the default program that is run once you start the container based on this image. Each Dockerfile only has one CMD, and only the last CMD instance is respected when multiple exist.
+FROM <image> - defines a base for your image. exemple : FROM debian  
+RUN <command> - executes any commands in a new layer on top of the current image and commits the result. RUN also has a shell form for running commands.  
+WORKDIR <directory> - sets the working directory for any RUN, CMD, ENTRYPOINT, COPY, and ADD instructions that follow it in the Dockerfile. (You go directly in the directy you choose)  
+COPY <src> <dest> - copies new files or directories from <src> and adds them to the filesystem of the container at the path <dest>.  
+CMD <command> - lets you define the default program that is run once you start the container based on this image. Each Dockerfile only has one CMD, and only the last CMD instance is respected when multiple exist.  
 
 # How to launch a localhost webpage to test it
 [Video tutorial](<https://www.youtube.com/watch?v=F2il_Mo5yww&ab_channel=linuxxraza>)
