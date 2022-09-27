@@ -38,24 +38,31 @@ I had to install docker. First, you need:
 ## Important commands to use docker
 
 ## general docker commands
+```c
 - docker ps or docker ps -a show the names of all the containers you have + the id you need and the port associated.
 - docker pull "NameOfTheImage", pull an image from dockerhub
-- docker logs 025, show the logs of your last run of dockers
+- docker "Three first letter of your docker" , show the logs of your last run of dockers
 - docker rm $(docker ps -a -q) allow to delete all the opened images
-- docker exec -it 8ac sh, to execute the program
+- docker exec -it "Three first letter of your docker" sh, to execute the program 
+```
 
 ## docker run
-- docker run "name of the docker image" to run the docker image
-- docker run -d, run container in background
-- docker run -p, publish a container's port to the host
-- docker run -P, publish all exposed port to random ports
-- docker run -it "imageName", le programme continuera de fonctionner et on pourra interagir avec le container
-- docker run -name sl mysql, give a name for the container instead an ID
-- docker run -d -p 7000:80 test:latest
+
+```c
+- docker run "name of the docker image" //to run the docker image
+- docker run -d, // run container in background
+- docker run -p,// publish a container's port to the host
+- docker run -P, // publish all exposed port to random ports
+- docker run -it "imageName", //le programme continuera de fonctionner et on pourra interagir avec le container
+- docker run -name sl mysql, //give a name for the container instead an ID
+- docker run -d -p 7000:80 test:latest 
+```
 
 ## docker image
-- docker image rm -f image name/id, delete the image, if the image is running you need to kill it first.
-- docker image kill name, stop a running image,
+```c
+- docker image rm -f "image name/id", //delete the image, if the image is running you need to kill it first.
+- docker image kill "name", //stop a running image,
+```
 
 ## How to write a docker file
 - Create a filename dockerfile
@@ -131,12 +138,14 @@ PHP-FPM (for fast-cgi Process Manager) runs as an isolated service when you use 
 - [tutorial open classroom dockercompose](https://openclassrooms.com/fr/courses/2035766-optimisez-votre-deploiement-en-creant-des-conteneurs-avec-docker/6211624-decouvrez-et-installez-docker-compose)
 
 ## Docker-Compose commands
-- docker-compose up -d --build, *Create and build all the containers and they still run in background*
-- docker-compose ps, *Check the status for all the containers*
-- docker-compose logs -f --tail 5, *see the 5 first lines of the logs of your containers*
-- docker-compose stop , *stop a stack of your docker compose*
-- Docker-compose down, *destroy all your ressources 
-- docker-compose config, *check the syntax of you docker-compose file*
+```c
+- docker-compose up -d --build, //Create and build all the containers and they still run in background
+- docker-compose ps, //Check the status for all the containers
+- docker-compose logs -f --tail 5, //see the 5 first lines of the logs of your containers
+- docker-compose stop , //stop a stack of your docker compose
+- Docker-compose down, //destroy all your ressources 
+- docker-compose config, //check the syntax of you docker-compose file
+```
 
 ## Inside the docker-compose file
 All the information about what does mean every line are in this [tutorial](https://openclassrooms.com/fr/courses/2035766-optimisez-votre-deploiement-en-creant-des-conteneurs-avec-docker/6211677-creez-un-fichier-docker-compose-pour-orchestrer-vos-conteneurs)
