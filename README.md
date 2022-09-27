@@ -3,9 +3,10 @@ This project aims to broaden your knowledge of system administration by using Do
 
 # SUMMARY
 
-### 1. [Definitions](https://github.com/vincentbachelet-collab/Inception/blob/main/README.md#definitions)
+### 1. [DEFINITIONS](https://github.com/vincentbachelet-collab/Inception/blob/main/README.md#definitions)
 ### 2. [DOCKER](https://github.com/vincentbachelet-collab/Inception/blob/main/README.md#Docker)
 ### 3. [NGINX](https://github.com/vincentbachelet-collab/Inception/blob/main/README.md#NGINX)
+### 4. [WORDPRESS](https://github.com/vincentbachelet-collab/Inception/blob/main/README.md#WORDPRESS)
 ### 4. [MARIADB](https://github.com/vincentbachelet-collab/Inception/blob/main/README.md#MARIADB)
 
 # Definitions
@@ -28,7 +29,7 @@ Docker images consist of read-only layers, each resulting from an instruction in
 ## How to install docker on MACOS
 For this project, I am on a mac so I don't need to use the virtual machine.
 I had to install docker. First, you need:
-- I went directly to the docker website and I downloaded docker https://docs.docker.com/desktop/install/mac-install/
+- I went directly to the docker website and I downloaded docker [Link to the website](https://docs.docker.com/desktop/install/mac-install/)
 - I installed docker on the machine
 - I tested to run a dockerfile thanks to the command docker run hello-world
 
@@ -71,7 +72,7 @@ COPY <src> <dest> - copies new files or directories from <src> and adds them to 
 CMD <command> - lets you define the default program that is run once you start the container based on this image. Each Dockerfile only has one CMD, and only the last CMD instance is respected when multiple exist.
 
 # How to launch a localhost webpage to test it
-Video tutorial : <https://www.youtube.com/watch?v=F2il_Mo5yww&ab_channel=linuxxraza>
+[Video tutorial](<https://www.youtube.com/watch?v=F2il_Mo5yww&ab_channel=linuxxraza>)
 - Create a HTML file with some code in it.
 - Create you dockerfile
 	- The image will be NGINX : FROM NGINX
@@ -85,19 +86,16 @@ Video tutorial : <https://www.youtube.com/watch?v=F2il_Mo5yww&ab_channel=linuxxr
 # NGINX
 
 ## How to set up NGINX (our web server)
-Tutorial : <http://nginx.org/en/docs/beginners_guide.html>
+[Video tutorial](<http://nginx.org/en/docs/beginners_guide.html>)
 Nginx is a webserver which stores hmtl, js, images files and use http request to display a website.
 Nginx conf documents will be used for config our server and the right proxy connexion.
 
-##	Command for nginx
-<https://www.nginx.com/resources/wiki/start/topics/tutorials/commandline/>
-- nginx -t = test your configuration file
-
 ## configure .conf file on nginx
 ### useful nginx links
-location explanations : <https://www.digitalocean.com/community/tutorials/nginx-location-directive>
-What is a proxy server : <https://www.varonis.com/fr/blog/serveur-proxy>
-All nginx definitions : <http://nginx.org/en/docs/http/ngx_http_core_module.html>
+[location explanations](<https://www.digitalocean.com/community/tutorials/nginx-location-directive>)
+[What is a proxy server](<https://www.varonis.com/fr/blog/serveur-proxy>)
+[All nginx definitions](<http://nginx.org/en/docs/http/ngx_http_core_module.html>)
+[Nginx Command line](<https://www.nginx.com/resources/wiki/start/topics/tutorials/commandline/>)
 
 ### Listen && Location
 - Listen will indicate to the server which requewt he has to accept:
@@ -129,7 +127,7 @@ All nginx definitions : <http://nginx.org/en/docs/http/ngx_http_core_module.html
 	It features with Wordpress
 
 # Docker-compose
-[tutorial open classroom dockercompose](https://openclassrooms.com/fr/courses/2035766-optimisez-votre-deploiement-en-creant-des-conteneurs-avec-docker/6211624-decouvrez-et-installez-docker-compose
+[tutorial open classroom dockercompose](https://openclassrooms.com/fr/courses/2035766-optimisez-votre-deploiement-en-creant-des-conteneurs-avec-docker/6211624-decouvrez-et-installez-docker-compose)
 
 ## Docker-Compose commands
 - docker-compose up -d --build, *Create and build all the containers and they still run in background*
