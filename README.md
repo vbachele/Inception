@@ -30,6 +30,7 @@ I had to install docker. First, you need:
 # DOCKER
 
 ## Important commands to use docker
+- [Best practices for building containers](https://cloud.google.com/architecture/best-practices-for-building-containers)
 
 ## general docker commands
 ```c
@@ -72,7 +73,7 @@ Here are the most common types of instructions:
 - COPY <src> <dest> - copies new files or directories from <src> and adds them to the filesystem of the container at the path <dest>.  
 - CMD <command> - lets you define the default program that is run once you start the container based on this image. Each Dockerfile only has one CMD, and only the last CMD instance is respected when multiple exist.  
 
-# How to launch a localhost webpage to test it
+# How to launch a localhost webpage to test
 [Video tutorial](<https://www.youtube.com/watch?v=F2il_Mo5yww&ab_channel=linuxxraza>)
 - Create a HTML file with some code in it.
 - Create you dockerfile
@@ -87,7 +88,7 @@ Here are the most common types of instructions:
 # NGINX
 
 ## How to set up NGINX (our web server)
-[Video tutorial](<http://nginx.org/en/docs/beginners_guide.html>)  
+- [Video tutorial](<http://nginx.org/en/docs/beginners_guide.html>)  
 Nginx is a webserver which stores hmtl, js, images files and use http request to display a website.
 Nginx conf documents will be used for config our server and the right proxy connexion.
 
@@ -97,6 +98,7 @@ Nginx conf documents will be used for config our server and the right proxy conn
 - [What is a proxy server](<https://www.varonis.com/fr/blog/serveur-proxy>)  
 - [All nginx definitions](<http://nginx.org/en/docs/http/ngx_http_core_module.html>)  
 - [Nginx Command line](<https://www.nginx.com/resources/wiki/start/topics/tutorials/commandline/>)  
+- [PID 1 signal handling && nginx](https://cloud.google.com/architecture/best-practices-for-building-containers#signal-handling)  
 
 ### Listen && Location
 - Listen will indicate to the server which requewt he has to accept:
@@ -172,6 +174,35 @@ You need to edit www.conf and place it to /etc/php/7.3(the usual version of php 
 	- Increase the number for the pm values in order to avoid a 502 page
 
 # MARIADB 
+MariaDB will be the data base to store information about our wordpress users and infos.
+In this section we have to create the Mariadb image and create 2 users.
+
+## Useful links
+- [Import-export databases](https://www.interserver.net/tips/kb/import-export-databases-mysql-command-line/)  
+- [Create and give permissions to a user](https://www.daniloaz.com/en/how-to-create-a-user-in-mysql-mariadb-and-grant-permissions-on-a-specific-database/)
+- [Why create /var/run/mysqld directory](http://cactogeek.free.fr/autres/DocumentationLinux-Windows/LinuxUbuntu/ProblemeMYSQL-mysqld.sockInexistant.pdf)
+- [How to give all privileges for a user on a database](https://chartio.com/resources/tutorials/how-to-grant-all-privileges-on-a-database-in-mysql/)
+
+## What are the steps to create your own Maria DB image
+1. Create a dockerfile
+	- Download mariadb-server && mariadb-client
+	- To run mariaDB on your container, you have to copy your .sh and the .sql on the /var/local/bin/
+	- Give the right to execute your mysqld (which is the daemon for mysql)
+	- Launch your script to install mariaDB
+	- Then do a CMD to enable the database to listen all the IPV4 adresses. 
+
+2. Create a script (.sh file)
+	- mysql_install_db initializes the MySQL data directory and creates the system tables that it 	contains, if they do not exist
+	- In this script we downloaded Maria DB on the container, we have to install it and create the root user
+	- Then we launch the commandline to give all privileges to the root user. The function GRANT from mysqlcli (sql command line) allows to give access (or all access) to a user.
+
+3. Create your file.sql
+	- 
+
+### Commands to check if all is working
+```c
+	SELECT User FROM mysql.user; // you need to go on your mariadb container and launch on sql command line
+```
 
 # Useful things to know about inception dockers and containers
 - I installed Ohmyzsh - check my dockerfile to see the command

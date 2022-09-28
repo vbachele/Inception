@@ -3,7 +3,7 @@ version: '3'
 services:
   nginx:
     container_name: nginx
-    build: ./nginx
+    build: ./requirements/nginx
     ports:
       - 443:443
     #depends_on:
@@ -17,7 +17,7 @@ services:
 
   mariadb:
     container_name: mariadb
-    image: mariadb
+    build: ./requirements/mariadb
     #volumes allow to store in a persistent disk the content in a local disk
     #db_data is a volume created by docker directly
     volumes:
@@ -30,6 +30,7 @@ services:
     restart: always
     env_file:
       - .env
+
   wordpress:
     container_name: wordpress
     #Create a depedency between the 2 container, db will be launched before
@@ -37,7 +38,7 @@ services:
       - mariadb
     #command: /usr/bin/mysql_secure_installation
     build: 
-      context: ./wordpress
+      context: ./requirements/wordpress
       dockerfile: dockerfile
     restart: always
     env_file:
