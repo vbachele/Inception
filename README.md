@@ -198,7 +198,7 @@ In this section we have to create the Mariadb image and create 2 users.
 	- Then we launch the commandline to give all privileges to the root user. The function GRANT from mysqlcli (sql command line) allows to give access (or all access) to a user.
 
 3. Create your file.sql
-	- 
+	- In progress
 
 ### Commands to check if all is working
 ```c
