@@ -198,7 +198,11 @@ In this section we have to create the Mariadb image and create 2 users.
 	- Then we launch the commandline to give all privileges to the root user. The function GRANT from mysqlcli (sql command line) allows to give access (or all access) to a user.
 
 3. Create your file.sql
-	- 
+	- 2 options : 
+		1. You create the database, the user and you give all privileges to the user 
+			as [malatini did](https://github.com/42cursus/inception/blob/validated/srcs/requirements/mariadb/config/create_db.sql)
+		2. You export your own wordpress.sql as I did
+			- Steps (TODO) 
 
 ### Commands to check if all is working
 ```c
