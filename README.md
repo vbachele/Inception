@@ -182,6 +182,7 @@ In this section we have to create the Mariadb image and create 2 users.
 - [Create and give permissions to a user](https://www.daniloaz.com/en/how-to-create-a-user-in-mysql-mariadb-and-grant-permissions-on-a-specific-database/)
 - [Why create /var/run/mysqld directory](http://cactogeek.free.fr/autres/DocumentationLinux-Windows/LinuxUbuntu/ProblemeMYSQL-mysqld.sockInexistant.pdf)
 - [How to give all privileges for a user on a database](https://chartio.com/resources/tutorials/how-to-grant-all-privileges-on-a-database-in-mysql/)
+- [How to import a data base](https://www.journaldunet.fr/web-tech/developpement/1202663-comment-importer-un-fichier-sql-dans-mysql-en-ligne-de-commande/)
 
 ## What are the steps to create your own Maria DB image
 1. Create a dockerfile
@@ -201,7 +202,7 @@ In this section we have to create the Mariadb image and create 2 users.
 
 ### Commands to check if all is working
 ```c
-	SELECT User FROM mysql.user; // you need to go on your mariadb container and launch on sql command line
+	SELECT User FROM mysql.user; // Show allow user in the DB - you need to go on your mariadb container and launch on sql command line
 ```
 
 # Useful things to know about inception dockers and containers
