@@ -32,7 +32,7 @@ I had to install docker. First, you need:
 ## Important commands to use docker
 - [Best practices for building containers](https://cloud.google.com/architecture/best-practices-for-building-containers)
 
-## general docker commands
+### 1.general docker commands
 ```c
 - docker ps or docker ps -a //show the names of all the containers you have + the id you need and the port associated.
 - docker pull "NameOfTheImage" // pull an image from dockerhub
@@ -41,7 +41,7 @@ I had to install docker. First, you need:
 - docker exec -it "Three first letter of your docker" sh // to execute the program with the shell 
 ```
 
-## docker run
+### 2.docker run
 
 ```c
 - docker run "name of the docker image" //to run the docker image
@@ -53,7 +53,7 @@ I had to install docker. First, you need:
 - docker run -d -p 7000:80 test:latest 
 ```
 
-## docker image
+### 3.docker image
 ```c
 - docker image rm -f "image name/id", //delete the image, if the image is running you need to kill it first.
 - docker image kill "name", //stop a running image,
