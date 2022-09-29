@@ -16,6 +16,7 @@ If you have questions: please contact me, I will be glad to give you an answer !
 ### 3. [NGINX](https://github.com/vincentbachelet-collab/Inception/blob/main/README.md#NGINX)
 ### 4. [WORDPRESS](https://github.com/vincentbachelet-collab/Inception/blob/main/README.md#WORDPRESS)
 ### 4. [MARIADB](https://github.com/vincentbachelet-collab/Inception/blob/main/README.md#MARIADB)
+### 5. [BONUS]()
 
 # Definitions
 ## What is a docker ?
@@ -239,6 +240,11 @@ mysql -uroot -p$MYSQL_ROOT_PASSWORD $MYSQL_DATABASE < /usr/local/bin/wordpress.s
 	SELECT wp_users.display_name FROM wp_users; // display username from worpress databese
 	SELECT *  FROM wp_users; // select
 ```
+
+# BONUS PART
+
+## REDIS
+[What is redis works with wordpress and what is a cache](https://www.section.io/engineering-education/how-to-set-up-and-configure-redis-caching-for-wordpress/)
 
 # Useful things to know about inception dockers and containers
 - I installed Ohmyzsh - check my dockerfile to see the command

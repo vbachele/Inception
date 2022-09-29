@@ -12,7 +12,7 @@ services:
     volumes:
       - wordpress_data:/var/www/html
     restart: always
-    networks: 
+    networks:
       - network
 
   mariadb:
@@ -23,7 +23,7 @@ services:
     volumes:
       - mariadb_data:/var/lib/mysql
     # in case of problem we restart automatically the container
-    networks: 
+    networks:
       - network
     ports:
       - 3306:3306
@@ -37,7 +37,7 @@ services:
     depends_on:
       - mariadb
     #command: /usr/bin/mysql_secure_installation
-    build: 
+    build:
       context: ./requirements/wordpress
       dockerfile: dockerfile
     restart: always
@@ -47,12 +47,22 @@ services:
      - 9000:9000
     volumes:
       - wordpress_data:/var/www/html
-    networks: 
+    networks:
       - network
 
 volumes:
-  mariadb_data: {}
-  wordpress_data: {}
+  mariadb_data:
+    driver: local
+    driver_opts:
+      type: none
+      device: /home/vbachele/data/mysql
+      o: bind
+  wordpress_data:
+    driver: local
+    driver_opts:
+      type: none
+      device: /home/vbachele/data/wordpress
+      o: bind
 
 networks:
   network:
