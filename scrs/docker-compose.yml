@@ -49,6 +49,19 @@ services:
     networks:
       - network
 
+  redis:
+    container_name: redis
+    image : redis
+    depends_on:
+      - wordpress
+    restart: always
+    env_file:
+    - .env
+    volumes:
+      - wordpress_data:/var/www/html
+    networks:
+      - network
+
 volumes:
   mariadb_data:
     driver: local
