@@ -7,6 +7,7 @@ You will be lost and you will not understand properly how it works. Do step by s
 Begin with Nginx then wordpress and finish with MariaDB.
 You want to try if each container works in general? No worries, you will be able to do it by importing images for wordpress and mariaDB from the hub. (if you read this for the first time, I invite you to begin to read this beautiful READ.ME and put a star on it! It helps!)
 - The 2 github who helped me a lot for the project : [llescure](https://github.com/llescure/42_Inception) and [malatini](https://github.com/42cursus/inception)
+If you have questions: please contact me, I will be glad to give you an answer ! my discord username: vbachele#7949
 
 # SUMMARY
 
@@ -80,7 +81,7 @@ Here are the most common types of instructions:
 - COPY <src> <dest> - copies new files or directories from <src> and adds them to the filesystem of the container at the path <dest>.
 - CMD <command> - lets you define the default program that is run once you start the container based on this image. Each Dockerfile only has one CMD, and only the last CMD instance is respected when multiple exist.
 
-# How to launch a localhost webpage to test
+## How to launch a localhost webpage to test
 [Video tutorial](<https://www.youtube.com/watch?v=F2il_Mo5yww&ab_channel=linuxxraza>)
 - Create a HTML file with some code in it.
 - Create you dockerfile
