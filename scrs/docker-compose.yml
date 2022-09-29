@@ -36,7 +36,6 @@ services:
     #Create a depedency between the 2 container, db will be launched before
     depends_on:
       - mariadb
-    #command: /usr/bin/mysql_secure_installation
     build:
       context: ./requirements/wordpress
       dockerfile: dockerfile

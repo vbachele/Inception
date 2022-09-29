@@ -3,10 +3,10 @@ This project aims to broaden your knowledge of system administration by using Do
 
 **Important things about the project**
 Don't try to do all the containers (Nginx, wordpress and mariaDB) at the same time.
-You will be lost and you will not understand properly how it works. Do step by step.
+You will be lost and you will not understand properly how it works. Do it step by step.
 Begin with Nginx then wordpress and finish with MariaDB.
 You want to try if each container works in general? No worries, you will be able to do it by importing images for wordpress and mariaDB from the hub. (if you read this for the first time, I invite you to begin to read this beautiful READ.ME and put a star on it! It helps!)
-- The 2 github who helped me a lot for the project : [llescure](https://github.com/llescure/42_Inception) and [malatini](https://github.com/42cursus/inception)
+- The 2 github which helped me a lot for the project : [llescure](https://github.com/llescure/42_Inception) and [malatini](https://github.com/42cursus/inception)
 If you have questions: please contact me, I will be glad to give you an answer ! my discord username: vbachele#7949
 
 # SUMMARY
@@ -78,9 +78,9 @@ Here are the most common types of instructions:
 
 - FROM <image> - defines a base for your image. exemple : FROM debian
 - RUN <command> - executes any commands in a new layer on top of the current image and commits the result. RUN also has a shell form for running commands.
-- WORKDIR <directory> - sets the working directory for any RUN, CMD, ENTRYPOINT, COPY, and ADD instructions that follow it in the Dockerfile. (You go directly in the directy you choose)
+- WORKDIR <directory> - sets the working directory for any RUN, CMD, ENTRYPOINT, COPY, and ADD instructions that follow it in the Dockerfile. (You go directly in the directory you choose)
 - COPY <src> <dest> - copies new files or directories from <src> and adds them to the filesystem of the container at the path <dest>.
-- CMD <command> - lets you define the default program that is run once you start the container based on this image. Each Dockerfile only has one CMD, and only the last CMD instance is respected when multiple exist.
+- CMD <command> - lets you define the default program that is run once you start the container based on this image. Each Dockerfile only has one CMD, and only the last CMD instance is respected when multiple ones exist.
 
 ## How to launch a localhost webpage to test
 [Video tutorial](<https://www.youtube.com/watch?v=F2il_Mo5yww&ab_channel=linuxxraza>)
@@ -99,7 +99,7 @@ Here are the most common types of instructions:
 ## How to set up NGINX (our web server)
 - [Video tutorial](<http://nginx.org/en/docs/beginners_guide.html>)
 Nginx is a webserver which stores hmtl, js, images files and use http request to display a website.
-Nginx conf documents will be used for config our server and the right proxy connexion.
+Nginx conf documents will be used to config our server and the right proxy connexion.
 
 ## configure .conf file on nginx
 ### useful nginx links
@@ -110,7 +110,7 @@ Nginx conf documents will be used for config our server and the right proxy conn
 - [PID 1 signal handling && nginx](https://cloud.google.com/architecture/best-practices-for-building-containers#signal-handling)
 
 ### Listen && Location
-- Listen will indicate to the server which requewt he has to accept:
+- Listen will indicate to the server which request it has to accept:
 	Listen can take ports and adresses : exemple Listen 80;
 - The location directive within NGINX server block allows to route request to correct location within the file system.
 	The directive is used to tell NGINX where to look for a resource by including files and folders while matching a location block against an URL.
@@ -119,7 +119,7 @@ Nginx conf documents will be used for config our server and the right proxy conn
 1. I added to my /var/www/ directory an index html file
 2. I configured the default file in etc/nginx/site-enabled/default
 3. I added a server bracket with a location to var/www/ in the doc. Save it and reload nginx with 'nginx -s reload'.
-4. Because the port host I put when I built was 7000. go to a web page and put: http://localhost:7000/. It works!!!!
+4. Because the port host I put when I built was 7000. Go to a web page and put: http://localhost:7000/. It works!!!!
 ![nginxLocalImage](images/nginxLocalImages.png)
 
 ## How to change your localhost by vbachele.42.fr
@@ -144,16 +144,16 @@ PHP-FPM (for fast-cgi Process Manager) runs as an isolated service when you use 
 
 ## Docker-Compose commands
 ```c
-- docker-compose up -d --build, //Create and build all the containers and they still run in background
+- docker-compose up -d --build, //Create and build all the containers and they still run in the background
 - docker-compose ps, //Check the status for all the containers
-- docker-compose logs -f --tail 5, //see the 5 first lines of the logs of your containers
+- docker-compose logs -f --tail 5, //see the first 5 lines of the logs of your containers
 - docker-compose stop , //stop a stack of your docker compose
 - Docker-compose down, //destroy all your ressources
 - docker-compose config, //check the syntax of you docker-compose file
 ```
 
 ## Inside the docker-compose file
-All the information about what does mean every line are in this [tutorial](https://openclassrooms.com/fr/courses/2035766-optimisez-votre-deploiement-en-creant-des-conteneurs-avec-docker/6211677-creez-un-fichier-docker-compose-pour-orchestrer-vos-conteneurs)
+All the information about what every line means are in this [tutorial](https://openclassrooms.com/fr/courses/2035766-optimisez-votre-deploiement-en-creant-des-conteneurs-avec-docker/6211677-creez-un-fichier-docker-compose-pour-orchestrer-vos-conteneurs)
 
 # WORDPRESS
 - [What is the wordpress CLI](https://www.dreamhost.com/wordpress/guide-to-wp-cli/#:~:text=The%20WP%2DCLI%20is%20a,faster%20using%20the%20WP%2DCLI.)
@@ -161,7 +161,7 @@ All the information about what does mean every line are in this [tutorial](https
 - [php-fpm - www.conf](https://myjeeva.com/php-fpm-configuration-101.html)
 
 *definitions*
-*wp-config.php* This file tells to your database how to get your file and how to treat them
+*wp-config.php* This file tells to your database how to get your files and how to treat them
 ## What are the steps to create your Wordpress
 1. Create you dockerfile image
 	- Download php-fpm
@@ -178,12 +178,12 @@ All the information about what does mean every line are in this [tutorial](https
 	- Give the 4th environmental variables for wordpress
 
 3. Create a www.conf
-You need to edit www.conf and place it to /etc/php/7.3(the usual version of php on 42 vm)/fpm/pool.d and wp-content.php to disable access wordpress installation page when you access your site at https://login.42.fr
-	- Put listen = 0.0.0.0:9000 to listen all the ports
+You need to edit www.conf and place it in /etc/php/7.3(the usual version of php on 42 vm)/fpm/pool.d and wp-content.php to disable access to the wordpress installation page when you access your site at https://login.42.fr
+	- Put listen = 0.0.0.0:9000 to listen to all ports
 	- Increase the number for the pm values in order to avoid a 502 page
 
 # MARIADB
-MariaDB will be the data base to store information about our wordpress users and infos.
+MariaDB will be the database to store information about our wordpress users and settings.
 In this section we have to create the Mariadb image and create 2 users.
 
 ## Useful links
@@ -208,24 +208,24 @@ mysql -uroot -p$MYSQL_ROOT_PASSWORD $MYSQL_DATABASE < /usr/local/bin/wordpress.s
 	- To run mariaDB on your container, you have to copy your .sh and the .sql on the /var/local/bin/
 	- Give the right to execute your mysqld (which is the daemon for mysql)
 	- Launch your script to install mariaDB
-	- Then do a CMD to enable the database to listen all the IPV4 adresses.
+	- Then do a CMD to enable the database to listen to all the IPV4 adresses.
 
 2. Create a script (.sh file)
-	- mysql_install_db initializes the MySQL data directory and creates the system tables that it 	contains, if they do not exist
+	- mysql_install_db initializes the MySQL data directory and creates the system tables that it contains, if they do not exist
 	- In this script we downloaded Maria DB on the container, we have to install it and create the root user
-	- Then we launch the commandline to give all privileges to the root user. The function GRANT from mysqlcli (sql command line) allows to give access (or all access) to a user.
+	- Then we launch the commandline to give all the privileges to the root user. The function GRANT from mysqlcli (sql command line) gives access (or all access) to a user.
 
 3. Create your file.sql
 	- 2 options :
 		1. You create the database, the user and you give all privileges to the user
 			as [malatini did](https://github.com/42cursus/inception/blob/validated/srcs/requirements/mariadb/config/create_db.sql)
-		2. You export your own wordpress.sql as I did
+		2. You export your own wordpress.sql as I did (and Lea did !!!!)
 			- Step 1: Create your admin user on wordpress:
-				You maybe don't know what is, no prob! It means you will export you admin user from your database in order to put it in your .sql file.
+				You might don't know what it is, no prob! It means you will export your admin user from your database in order to put it in your .sql file.
 				- Go to your wordpress website (localhost:443) and create your user by using the same username and password as your .env file.
 			- Step 2: Export your admin user.sql
 				You have to go on your mariaDB container and do the following command
-				- mysqldump -u 'username' -p 'databasename' > filename.sql *it zill export your user on the filename.sql, please change username, databasename by what you put in your .env file*
+				- mysqldump -u 'username' -p 'databasename' > filename.sql *it will export your user on the filename.sql, please change username, databasename by what you put in your .env file*
 				- You have a file called filename.sql in your current directory
 				- "cat filename.sql" in your container and copy past to your .sql project.
 				- Your .sql is ready now to be imported
@@ -237,7 +237,7 @@ mysql -uroot -p$MYSQL_ROOT_PASSWORD $MYSQL_DATABASE < /usr/local/bin/wordpress.s
 	SHOW DATABASES; // show the databes
 	use 'wordpress'; // go in the wordpress databse
 	SHOW TABLES; // show all the tables from the database you selected
-	SELECT wp_users.display_name FROM wp_users; // display username from worpress databese
+	SELECT wp_users.display_name FROM wp_users; // display username from wordpress database
 	SELECT *  FROM wp_users; // select
 ```
 
@@ -249,11 +249,10 @@ mysql -uroot -p$MYSQL_ROOT_PASSWORD $MYSQL_DATABASE < /usr/local/bin/wordpress.s
 # Useful things to know about inception dockers and containers
 - I installed Ohmyzsh - check my dockerfile to see the command
 - On the mac, Apache service is installed by default. I deleted Apache from my computer to avoid any problem with nginx
-- If you are at 42 on their computer you should stop these services running by default
+- If you are at 42 on their computer you should stop these services which are running by default
 ```c
 sudo service nginx stop
 sudo service mariadb stop
 sudo service apache2 stop
 sudo service mysql stop
 ```
-
