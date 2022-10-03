@@ -1,12 +1,10 @@
 FROM debian:buster
 
 RUN		apt-get update
-RUN		apt-get install -y redis-server \
-						php-redis
+RUN		apt-get install -y redis
 
-COPY ./conf/redis.conf /etc/redis/redis.conf
+COPY ./tools/redis.sh /tmp/redis.sh
 
 EXPOSE 6379
 
-CMD ["redis-server", "/etc/redis/redis.conf"]
-
+CMD ["sh", "/tmp/redis.sh"]
