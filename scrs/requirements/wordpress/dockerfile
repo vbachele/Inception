@@ -17,8 +17,8 @@ RUN apt-get update && apt-get -y install \
 ### Bonus part ###
 # I need to install wp_cli command and put it in the right directory /usr/local/bin
 RUN curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar \
-  chmod +x wp-cli.phar \
-  mv wp-cli.phar /usr/local/bin/wp
+  && chmod +x wp-cli.phar \
+  && mv wp-cli.phar /usr/local/bin/wp
 ##################
 
 # Copy the .conf in the html directory
