@@ -271,7 +271,7 @@ redis-server --protected-mode no // To set up redis when you launch your image
 3. Modify your wp-config.php file
 *To do this, we can set directly information in the script for wordpress wpcli command*
 	- Define the redis Host
-	- Define the redis Port
+	- Define the redis Port // To redirect wordpress port on this port
 	- Define wp cache key salt
 	- Define wp redis password
 	- Define Wp Redis client

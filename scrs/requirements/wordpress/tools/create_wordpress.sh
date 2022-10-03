@@ -1,10 +1,10 @@
 #!/bin/sh
 
 #check if wp-config.php exist
-if [ -f ./wp-config.php ]
-then
-	echo "wordpress already downloaded"
-else
+#if [ -f ./wp-config.php ]
+#then
+	#echo "wordpress already downloaded"
+#else
 
 ####### MANDATORY PART ##########
 
