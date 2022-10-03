@@ -1,10 +1,10 @@
 #!/bin/sh
 
-#check if wp-config.php exist
-# if [ -f ./wp-config.php ]
-# then
-# 	echo "wordpress already downloaded"
-# else
+check if wp-config.php exist
+if [ -f ./wp-config.php ]
+then
+	echo "wordpress already downloaded"
+else
 
 ####### MANDATORY PART ##########
 
@@ -32,13 +32,11 @@
  	wp config set WP_CACHE_KEY_SALT $DOMAIN_NAME --allow-root
   	wp config set WP_REDIS_PASSWORD $REDIS_PASSWORD --allow-root
  	wp config set WP_REDIS_CLIENT phpredis --allow-root
-###  end of redis part  ###
-	wp plugin install redis-cache --activate --allow-root
+	wp plugin install redis-cache --activatet
     wp plugin update --all --allow-root
+###  end of redis part  ###
 
 ###################################
-# fi
-
-wp redis enable --allow-root
+fi
 
 exec "$@"
