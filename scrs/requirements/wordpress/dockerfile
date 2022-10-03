@@ -3,6 +3,7 @@ FROM debian:buster
 #download of php-fpm
 RUN apt-get update && apt-get -y install \
 	wget \
+	redis \
 	curl \
 	bash \
 	php \
