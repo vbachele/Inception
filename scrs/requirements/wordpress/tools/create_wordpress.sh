@@ -32,7 +32,7 @@ else
  	wp config set WP_CACHE_KEY_SALT $DOMAIN_NAME --allow-root
   	wp config set WP_REDIS_PASSWORD $REDIS_PASSWORD --allow-root
  	wp config set WP_REDIS_CLIENT phpredis --allow-root
-	wp plugin install redis-cache --activatet
+	wp plugin install redis-cache --activat-root
     wp plugin update --all --allow-root
 ###  end of redis part  ###
 
