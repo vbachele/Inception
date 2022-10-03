@@ -5,6 +5,9 @@ if [ -f ./wp-config.php ]
 then
 	echo "wordpress already downloaded"
 else
+
+####### MANDATORY PART ##########
+
 	#Download wordpress and all config file
 	wget http://wordpress.org/latest.tar.gz
 	tar xfz latest.tar.gz
@@ -18,6 +21,19 @@ else
 	sed -i "s/localhost/$MYSQL_HOSTNAME/g" wp-config-sample.php
 	sed -i "s/database_name_here/$MYSQL_DATABASE/g" wp-config-sample.php
 	cp wp-config-sample.php wp-config.php
+###################################
+
+####### BONUS PART ################
+
+## redis ##
+	wp config set WP_REDIS_HOST redis
+  	wp config set WP_REDIS_PORT 6379 --raw
+ 	wp config set WP_CACHE_KEY_SALT $DOMAIN_NAME
+  	wp config set WP_REDIS_PASSWORD $REDIS_PASSWORD
+ 	wp config set WP_REDIS_CLIENT phpredis
+###  end of redis part  ###
+
+###################################
 fi
 
 exec "$@"

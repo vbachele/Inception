@@ -249,6 +249,36 @@ mysql -uroot -p$MYSQL_ROOT_PASSWORD $MYSQL_DATABASE < /usr/local/bin/wordpress.s
 [how to set up redis(french article)](https://gaelbillon.com/installer-et-configurer-redis-pour-wordpress-en-5-minutes/)
 
 ### Definition
+Remote Dictionary Server (Redis) is an in-memory, persistent, key-value database known as a data structure server. One important factor that differentiates Redis from similar servers is its ability to store and manipulate high-level data types (common examples include lists, maps, sets, and sorted sets).
+
+### REDIS useful commands
+```c
+redis-cli // to connect with the cli
+redis-server --protected-mode no // To set up redis when you launch your image
+```
+
+### How to set up REDIS
+1. Create a dockerfile
+	- Install redis on it
+	- Copy the .sh in your image
+	- RUN the .sh
+
+2. Create a sheel script
+*Redis by default has a redis.conf and we need to modify 3 values on it*
+	- Modify the value on the .conf document with the sed function
+	- Run the redis-server command to install it
+
+3. Modify your wp-config.php file
+*To do this, we can set directly information in the script for wordpress wpcli command*
+	- Define the redis Host
+	- Define the redis Port
+	- Define wp cache key salt
+	- Define wp redis password
+	- Define Wp Redis client
+
+### How to know your redis is installed and running
+	- Launch the command 'redis-cli -h localhost', your should connect
+	- Then do ping and the answer should be PONG
 
 # Useful things to know about inception dockers and containers
 - I installed Ohmyzsh - check my dockerfile to see the command
