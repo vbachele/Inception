@@ -269,19 +269,27 @@ redis-server --protected-mode no // To set up redis when you launch your image
 	- Run the redis-server command to install it
 
 3. Modify the dockerfile of wordpress
-*You need to DL the wp-cli and you need to move it it the app directory (/usr/bin/wordpress)
+	- You need to DL the wp-cli and you need to move it it the app directory (/usr/bin/wordpress)
+	- Add the installation of redis and php-redis
 
-4. Modify your wp-config.php file
+4. Modify your script on wordpress file
 *To do this, we can set directly information in the script for wordpress wpcli command*
+- Modify the wp-config.php file
 	- Define the redis Host
 	- Define the redis Port // To redirect wordpress port on this port
 	- Define wp cache key salt
 	- Define wp redis password
 	- Define wp redis client
+- Install the redis-cache plugin, updates and enables it
 
-### How to know your redis is installed and running
-	- Launch the command 'redis-cli -h localhost', your should connect
-	- Then do ping and the answer should be PONG
+### How to know your redis is installed on wordpress and running
+1. Check redis is properly installed on your redis image
+Launch the command 'redis-cli -h localhost' on your redis image, your should connect to your localhost. Then do ping and the answer should be PONG. Great your redis is installed.
+
+2. Check if the plugin is installed on wordpress
+	- Go to your wp-admin panel on wordpress : for me it is https://vbachele.42.fr
+	- click on plugins on the left tab
+	- If you see "Redis Object Cache", Congrats !, click on settings and you will see Status "Connected" in green
 
 # Useful things to know about inception dockers and containers
 - I installed Ohmyzsh - check my dockerfile to see the command
