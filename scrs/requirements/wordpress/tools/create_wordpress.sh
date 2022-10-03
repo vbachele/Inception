@@ -1,6 +1,6 @@
 #!/bin/sh
 
-check if wp-config.php exist
+#check if wp-config.php exist
 if [ -f ./wp-config.php ]
 then
 	echo "wordpress already downloaded"
