@@ -1,6 +1,5 @@
 FROM debian:buster
 
-#download of php-fpm
 RUN apt-get update && apt-get -y install \
 	wget \
 	curl \
@@ -19,7 +18,6 @@ RUN apt-get update && apt-get -y install \
 ## redis ##
 RUN php8-redis \
 	redis \
-	&& rm -rf /var/lib/apt/lists/*
 
 # I need to install wp_cli command and put it in the right directory /usr/local/bin
 RUN curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar \
