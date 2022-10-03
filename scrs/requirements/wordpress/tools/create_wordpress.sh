@@ -1,10 +1,10 @@
 #!/bin/sh
 
 #check if wp-config.php exist
-if [ -f ./wp-config.php ]
-then
-	echo "wordpress already downloaded"
-else
+# if [ -f ./wp-config.php ]
+# then
+# 	echo "wordpress already downloaded"
+# else
 
 ####### MANDATORY PART ##########
 
@@ -37,7 +37,7 @@ else
     wp plugin update --all --allow-root
 
 ###################################
-fi
+# fi
 
 wp redis enable --allow-root
 
