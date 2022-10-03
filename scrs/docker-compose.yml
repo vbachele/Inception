@@ -51,7 +51,7 @@ services:
 
   redis:
     container_name: redis
-    image : redis-server
+    image : redis
     depends_on:
       - wordpress
     ports:
