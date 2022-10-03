@@ -268,13 +268,16 @@ redis-server --protected-mode no // To set up redis when you launch your image
 	- Modify the value on the .conf document with the sed function
 	- Run the redis-server command to install it
 
-3. Modify your wp-config.php file
+3. Modify the dockerfile of wordpress
+*You need to DL the wp-cli and you need to move it it the app directory (/usr/bin/wordpress)
+
+4. Modify your wp-config.php file
 *To do this, we can set directly information in the script for wordpress wpcli command*
 	- Define the redis Host
 	- Define the redis Port // To redirect wordpress port on this port
 	- Define wp cache key salt
 	- Define wp redis password
-	- Define Wp Redis client
+	- Define wp redis client
 
 ### How to know your redis is installed and running
 	- Launch the command 'redis-cli -h localhost', your should connect
