@@ -3,7 +3,6 @@ FROM debian:buster
 #download of php-fpm
 RUN apt-get update && apt-get -y install \
 	wget \
-	redis \
 	curl \
 	bash \
 	php \
@@ -12,7 +11,12 @@ RUN apt-get update && apt-get -y install \
 	php-fpm \
 	php-pdo \
 	php-gd php-cli \
-	php-mbstring \
+	php-mbstring
+## Bonus ##
+RUN php8-redis \
+	redis
+############
+
 	&& rm -rf /var/lib/apt/lists/*
 
 ### Bonus part ###
