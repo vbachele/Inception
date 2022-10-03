@@ -11,7 +11,7 @@ RUN apt-get update && apt-get -y install \
 	php-pdo \
 	php-gd php-cli \
 	php-mbstring \
-	redis
+	redis \
 	php-redis \
 	&& rm -rf /var/lib/apt/lists/*
 
