@@ -1,8 +1,8 @@
 #!/bin/sh
 
-if [ ! -f "/etc/redis.conf.bak" ]; then
+if [ ! -f "/etc/redis/redis.conf.bak" ]; then
 
-    cp /etc/redis.conf /etc/redis.conf.bak
+    cp /etc//redis/redis.conf /etc/redis/redis.conf.bak
 
     sed -i "s|bind 127.0.0.1|#bind 127.0.0.1|g" /etc/redis.conf
     # sed -i "s|# requirepass foobared|requirepass $REDIS_PWD|g" /etc/redis.conf
