@@ -4,10 +4,11 @@ RUN apt-get update && apt-get install -y vsftpd
 
 COPY ./conf/vsftpd.conf /tmp/vsftpd.conf
 
+COPY ./tools/server_ftp.sh /tmp/server_ftp.sh
+
 RUN adduser -D -h /var/www/html -u 82 -s /sbin/nologin www-data -G www-data
 
-COPY tools/server_ftp.sh /
-ENTRYPOINT ["/server_ftp.sh"]
+ENTRYPOINT ["sh" "/tmp/server_ftp.sh"]
 
 EXPOSE 20/tcp 21/tcp
 STOPSIGNAL SIGQUIT
