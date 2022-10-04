@@ -1,4 +1,4 @@
-!/bin/sh
+#!/bin/sh
 
 if [ ! -f "/etc/vsftpd/vsftpd.conf.bak" ]; then
 
