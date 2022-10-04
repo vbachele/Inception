@@ -1,6 +1,6 @@
 #!/bin/sh
 
-if [ ! -f "/etc/vsftpd/vsftpd.conf.bak" ]; then
+#if [ ! -f "/etc/vsftpd/vsftpd.conf.bak" ]; then
 
     mkdir -p /var/www/html
 
@@ -14,7 +14,7 @@ if [ ! -f "/etc/vsftpd/vsftpd.conf.bak" ]; then
 
     echo $FTP_USR | tee -a /etc/vsftpd.userlist &> /dev/null
 
-fi
+#fi
 
 echo "FTP started on :21"
 /usr/sbin/vsftpd /etc/vsftpd/vsftpd.conf
