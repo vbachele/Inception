@@ -1,5 +1,5 @@
 # Inception
-This project aims to broaden your knowledge of system administration by using Docker. You will virtualize several Docker images, creating them in your new personal virtual machine. In this read.me you will have an inception tutorial to know how the project works.
+This project from 42 school aims to broaden your knowledge of system administration by using Docker. IIn this tutorial You will virtualize several Docker images, creating them in your new personal virtual machine. In this read.me you will have an inception tutorial to know how the project works.
 
 **Important things about the project**
 Don't try to do all the containers (Nginx, wordpress and mariaDB) at the same time.
@@ -290,6 +290,34 @@ Launch the command 'redis-cli -h localhost' on your redis image, your should con
 	- Go to your wp-admin panel on wordpress : for me it is https://vbachele.42.fr
 	- click on plugins on the left tab
 	- If you see "Redis Object Cache", Congrats !, click on settings and you will see Status "Connected" in green
+
+## FTP SERVER
+[What is an FTP server?](https://titanftp.com/2022/07/05/what-is-an-ftp-server/)
+[What is vstftpd](https://en.wikipedia.org/wiki/Vsftpd)
+[Install an ftp server with wordpress](http://praveen.kumar.in/2009/05/31/setting-up-ftps-using-vsftpd-for-wordpress-plugins-auto-upgrade/)
+
+### Definition
+An FTP Server, in the simplest of definitions, is a software application that enables the transfer of files from one computer to another. FTP (which stands for “File Transfer Protocol”) is a way to transfer files to any computer in the world that is connected to the Internet. For wordpress it allows to modify ealisy your files like the wordpress files or your code.
+
+### How to set up your ftp server ?
+1. Create a dockerfile
+	- Download vsftpd (a ftp secure secure server)
+	- Copy the .conf in your ftp image
+	- Run your script to install ftp_server
+	- Run your ftp_server
+2. Modify your docker-composer.yml
+	- Create your image as usual
+	- Add the port 20 and 21 (port by default for ftp servers)
+	- Put the same volumes as your wordpress && nginx
+
+3. Create a script to execute
+*In this script we will create a user, give rights*
+	- Create a user
+	- give him the right to your www files
+
+4. Create .conf_file
+*In this document*
+
 
 # Useful things to know about inception dockers and containers
 - I installed Ohmyzsh - check my dockerfile to see the command

@@ -6,9 +6,6 @@ services:
     build: ./requirements/nginx
     ports:
       - 443:443
-    #depends_on:
-    #  - mariadb
-     # - wordpress
     volumes:
       - wordpress_data:/var/www/html
     restart: always
@@ -49,6 +46,7 @@ services:
     networks:
       - network
 
+#BONUS PART
   redis:
     container_name: redis
     build: ./requirements/bonus/redis
@@ -58,11 +56,26 @@ services:
      - '6379:6379'
     restart: always
     env_file:
-    - .env
+      - .env
     volumes:
       - wordpress_data:/var/www/html
     networks:
       - network
+
+  ftp_server:
+    container_name: ftp_server
+    build: ./requirements/bonus/ftp_server
+    ports:
+      - "20:20"
+      - "21:21"
+    env_file:
+      - .env
+    volumes:
+      - wordpress_data:/var/www/html
+    networks:
+      - network
+    restart:
+      - always
 
 volumes:
   mariadb_data:
