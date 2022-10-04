@@ -1,7 +1,7 @@
 #! /bin/sh
 # ! -f verify if it is a file
 
-if [! -f "/etc/vsftpd.conf.bak"]; then
+if [ ! -f "/etc/vsftpd.conf.bak"]; then
 
 	cp /etc/vsftpd/vsftpd.conf /etc/vsftpd/vsftpd.conf.bak
 	mv /tmp/vsftpd.conf /etc/vsftpd/vsftpd.conf
@@ -14,5 +14,5 @@ if [! -f "/etc/vsftpd.conf.bak"]; then
 
 fi
 
-#echo "FTP started on :21"
+echo "FTP started on :21"
 /usr/sbin/vsftpd /etc/vsftpd/vsftpd.conf
