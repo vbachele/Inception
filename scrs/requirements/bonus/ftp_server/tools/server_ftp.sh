@@ -3,8 +3,8 @@
 
 if [ ! -f "/etc/vsftpd.conf.bak" ]; then
 
-	cp /etc/vsftpd/vsftpd.conf /etc/vsftpd/vsftpd.conf.bak
-	mv /tmp/vsftpd.conf /etc/vsftpd/vsftpd.conf
+	cp /etc/vsftpd.conf /etc/vsftpd.conf.bak
+	mv /tmp/vsftpd.conf /etc/vsftpd.conf
 
 	Add the FTP_USER, change his password and declare him as the owner of wordpress folder and all subfolders
     adduser $FTP_USR --disabled-password
