@@ -12,6 +12,8 @@ if [ ! -f "/etc/vsftpd.conf.bak" ]; then
     adduser $FTP_USER --disabled-password
     echo "$FTP_USER:$FTP_PASSWORD" | /usr/sbin/chpasswd &> /dev/null
 	chown -R $FTP_USER:$FTP_USER /var/www/html
+
+	#Add the user to the allowed FTP users list
     echo $FTP_USER | tee -a /etc/vsftpd.userlist &> /dev/null
 
 
