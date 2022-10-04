@@ -62,7 +62,7 @@ services:
     networks:
       - network
 
-  ftp_server:
+  ftpserver:
     container_name: ftp_server
     build: ./requirements/bonus/ftp_server
     ports:
