@@ -2,10 +2,8 @@ FROM debian:buster
 
 RUN apt-get update && apt-get install -y vsftpd
 
-CP ./conf/vsftpd.conf /etc/vsftpd.conf
+COPY ./conf/vsftpd.conf /tmp/vsftpd.conf
 
-EXPOSE 20/tcp 21/tcp
+COPY ./tools/server_ftp.sh /tmp/server_ftp.sh
 
-VOLUME ["/var/www/html"]
-
-CMD ["vsftpd"]
+ENTRYPOINT ["sh", "/tmp/server_ftp.sh"]
