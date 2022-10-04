@@ -6,4 +6,14 @@ COPY ./conf/vsftpd.conf /tmp/vsftpd.conf
 
 COPY ./tools/server_ftp.sh /tmp/server_ftp.sh
 
-ENTRYPOINT ["sh", "/tmp/server_ftp.sh"]
+RUN adduser -D -h /var/www/html -u 82 -s /sbin/nologin www-data -G www-data
+
+COPY tools/entrypoint.sh /
+ENTRYPOINT ["/entrypoint.sh"]
+
+EXPOSE 20/tcp 21/tcp
+STOPSIGNAL SIGQUIT
+
+VOLUME ["/var/www/html"]
+
+CMD ["vsftpd"]

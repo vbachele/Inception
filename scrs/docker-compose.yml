@@ -66,10 +66,13 @@ services:
     container_name: ftp_server
     build: ./requirements/bonus/ftp_server
     ports:
-      - "21100-21110:21100-21110"
+      - '20:20'
       - '21:21'
     env_file:
       - .env
+    expose:
+      - "20"
+      - "21"
     volumes:
       - wordpress_data:/var/www/html
     networks:
