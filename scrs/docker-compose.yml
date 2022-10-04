@@ -66,8 +66,8 @@ services:
     container_name: ftp_server
     build: ./requirements/bonus/ftp_server
     ports:
-      - "20:20"
-      - "21:21"
+      - '20:20'
+      - '21:21'
     env_file:
       - .env
     volumes:
