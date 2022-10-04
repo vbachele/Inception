@@ -2,3 +2,8 @@ FROM debian:buster
 
 RUN apt-get update && apt-get install -y vsftpd
 
+EXPOSE 20/tcp 21/tcp
+
+VOLUME ["/var/www/html"]
+
+CMD ["vsftpd"]
