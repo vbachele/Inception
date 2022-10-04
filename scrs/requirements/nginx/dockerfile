@@ -13,9 +13,6 @@ RUN openssl req -newkey rsa:4096 -x509 -sha256 -days 365 -nodes \
        -subj "/C=FR/ST=Paris/L=Paris/O=42 School/OU=vbachele/CN=vbachele/"
 
 COPY ./conf/nginx.conf /etc/nginx/conf.d
-#installing ohmyzsh
-#RUN apt-get update && apt-get -y install wget && rm -rf /var/lib/apt/lists/*
-#RUN sh -c "$(wget -O- https://github.com/deluan/zsh-in-docker/releases/download/v1.1.2/zsh-in-docker.sh)"
 
 # nginx config
 RUN mkdir -p /run/nginx

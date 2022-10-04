@@ -295,6 +295,7 @@ Launch the command 'redis-cli -h localhost' on your redis image, your should con
 [What is an FTP server?](https://titanftp.com/2022/07/05/what-is-an-ftp-server/)
 [What is vstftpd](https://en.wikipedia.org/wiki/Vsftpd)
 [Install an ftp server with wordpress](http://praveen.kumar.in/2009/05/31/setting-up-ftps-using-vsftpd-for-wordpress-plugins-auto-upgrade/)
+[Understand vstftpd.conf file (french version)](https://linux.developpez.com/vsftpd/)
 
 ### Definition
 An FTP Server, in the simplest of definitions, is a software application that enables the transfer of files from one computer to another. FTP (which stands for “File Transfer Protocol”) is a way to transfer files to any computer in the world that is connected to the Internet. For wordpress it allows to modify ealisy your files like the wordpress files or your code.
