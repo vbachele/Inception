@@ -62,7 +62,7 @@ services:
     networks:
       - network
 
-  ftpserver:
+  ftp_server:
     container_name: ftp_server
     build: ./requirements/bonus/ftp_server
     ports:
@@ -74,8 +74,7 @@ services:
       - wordpress_data:/var/www/html
     networks:
       - network
-    restart:
-      - always
+    restart: always
 
 volumes:
   mariadb_data:
