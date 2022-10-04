@@ -1,7 +1,7 @@
 #! /bin/sh
 # ! -f verify if it is a file
 
-if [! -f "/etc/vsftpd.conf.bak"]; then
+#if [! -f "/etc/vsftpd.conf.bak"]; then
 
 	#cp /etc/vsftpd/vsftpd.conf /etc/vsftpd/vsftpd.conf.bak
 	#mv /tmp/vsftpd.conf /etc/vsftpd/vsftpd.conf
@@ -12,7 +12,7 @@ if [! -f "/etc/vsftpd.conf.bak"]; then
 	# chown -R $FTP_USR:$FTP_USR /var/www/html
     # echo $FTP_USR | tee -a /etc/vsftpd.userlist &> /dev/null
 
-fi
+#fi
 
 ##echo "FTP started on :21"
 #/usr/sbin/vsftpd /etc/vsftpd/vsftpd.conf
