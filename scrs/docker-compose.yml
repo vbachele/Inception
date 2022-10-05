@@ -63,22 +63,19 @@ services:
       - network
 
   ftp-server:
-    build:
-      context: ./bonus/ftp_server
-      args:
-        - USER_ID=${USER_ID}
-        - GROUP_ID=${GROUP_ID}
     build: requirements/bonus/ftp_server
     container_name: ftp-server
-    ports: ['7042:7042']
+    ports:
+      - "21:21"
+      - "21100-21110:21100-21110"
     volumes:
       - "wordpress_data:/var/www/html"
     networks:
       - network
     restart: always
-    env_file:
-      - .env
-
+    environment:
+      FTP_USR: ${FTP_USR}
+      FTP_PWD: ${FTP_PWD}
 
 volumes:
   mariadb_data:
