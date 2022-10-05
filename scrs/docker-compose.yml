@@ -65,17 +65,15 @@ services:
   ftp-server:
     build: requirements/bonus/ftp_server
     container_name: ftp-server
-    ports:
-      - "21:21"
-      - "21100-21110:21100-21110"
+    ports: ['7042:7042']
     volumes:
       - "wordpress_data:/var/www/html"
     networks:
       - network
     restart: always
-    environment:
-      FTP_USR: ${FTP_USR}
-      FTP_PWD: ${FTP_PWD}
+    env_file:
+      - .env
+
 
 volumes:
   mariadb_data:
