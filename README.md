@@ -319,6 +319,34 @@ An FTP Server, in the simplest of definitions, is a software application that en
 4. Create .conf_file
 *In this document*
 
+## ADMINER
+
+### Definition
+Replace phpMyAdmin with Adminer and you will get a tidier user interface, better support for MySQL features, higher performance and more security.
+
+### How to set up adminer  
+1. Create a dockerfile
+	- Download curl && php
+	- Download the version of adminer
+	- Move the adminer php file to the index.php file (located in var/www/html)
+	- Add the user www-data
+	- Move your conf file in the php-fpm.d directory
+
+2. Create a www.conf file
+	- You need to add the listen port (*in my case the 9000*)
+	- Add the listen owner and listen group *(in my case : www-data)*
+
+3. Modify the nginx.conf file
+	- You need to add in your nginx.conf a rule to listen the adminer on the port 9000.
+	- It will check if the index.php exist
+
+4. Modify your docker-compose.yml
+	- Create as usual a docker image adminer in your docker-compose
+
+### How to know adminer is working?  
+- You have to put : https://"your_website_name"/adminer *in my case https://vbachele.42.fr/adminer*
+- You should be redirect on the adminer connexion page
+
 
 # Useful things to know about inception dockers and containers
 - I installed Ohmyzsh - check my dockerfile to see the command
