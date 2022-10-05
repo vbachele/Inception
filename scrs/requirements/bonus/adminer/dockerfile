@@ -1,6 +1,9 @@
-FROM debian:buster
+FROM alpine:3.15.0
 
-RUN apt-get update && apt-get -y install \
+# install prerequisites
+# https://wordpress.com/support/php-environment/
+RUN apk update && \
+  	apk add --no-cache \
 	curl \
 	less \
 	mariadb-client \
