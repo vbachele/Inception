@@ -3,6 +3,9 @@ version: '3'
 services:
   nginx:
     container_name: nginx
+    depends_on:
+      - adminer
+      - wordpress
     build: ./requirements/nginx
     ports:
       - 443:443
@@ -57,8 +60,6 @@ services:
     restart: always
     env_file:
       - .env
-    volumes:
-      - wordpress_data:/var/www/html
     networks:
       - network
 
@@ -78,28 +79,47 @@ services:
   #     FTP_PWD: ${FTP_PWD}
 
   adminer:
-    build: ./requirements/bonus/adminer
+    build: 
+      context: ./requirements/bonus/adminer
+      args:
+        - USER_ID=${USER_ID}
+        - GROUP_ID=${GROUP_ID}
+    container_name: adminer
     restart: always
-    depends_on:
-      - mariadb
-    expose:
-     - "9000"
-    networks:
-      - network
+    healthcheck:
+      test: netstat -an | grep 9042 > /dev/null; if [ 0 != $$? ]; then exit 1; fi;
+      interval: 10s
+      start_period: 10s
+    networks: ['network']
+  # adminer:
+  #   build: ./requirements/bonus/adminer
+  #   restart: always
+  #   depends_on:
+  #     - mariadb
+  #   expose:
+  #    - "9000"
+  #   networks:
+  #     - network
+  #   volumes:
+  #     - wordpress_data:/var/www/html
+  #   healthcheck:
+  #     test: netstat -an | grep 9000 > /dev/null; if [ 0 != $$? ]; then exit 1; fi;
+  #     interval: 10s
+  #     start_period: 10s
 
 volumes:
   mariadb_data:
     driver: local
-    driver_opts:
-      type: none
-      device: /home/vbachele/data/mysql
-      o: bind
+    # driver_opts:
+    #   type: none
+    #   device: /home/vbachele/data/mysql
+    #   o: bind
   wordpress_data:
     driver: local
-    driver_opts:
-      type: none
-      device: /home/vbachele/data/wordpress
-      o: bind
+    # driver_opts:
+    #   type: none
+    #   device: /home/vbachele/data/wordpress
+    #   o: bind
 
 networks:
   network:
