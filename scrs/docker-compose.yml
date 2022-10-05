@@ -63,6 +63,11 @@ services:
       - network
 
   ftp-server:
+    build:
+      context: ./bonus/ftp_server
+      args:
+        - USER_ID=${USER_ID}
+        - GROUP_ID=${GROUP_ID}
     build: requirements/bonus/ftp_server
     container_name: ftp-server
     ports: ['7042:7042']
