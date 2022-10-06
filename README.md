@@ -1,8 +1,9 @@
 # Inception
 This project from 42 school aims to broaden your knowledge of system administration by using Docker. IIn this tutorial You will virtualize several Docker images, creating them in your new personal virtual machine. In this read.me you will have an inception tutorial to know how the project works.
 
-**Important things about the project**
-1. Don't try to do all the containers (Nginx, wordpress and mariaDB) at the same time.
+## Important things about the project
+
+1. **Don't try to do all the containers** (Nginx, wordpress and mariaDB) at the same time.
 You will be lost and you will not understand properly how it works. Do it step by step.
 
 2. Begin with Nginx by displaying an index.html page 
