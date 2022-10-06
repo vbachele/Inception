@@ -347,6 +347,8 @@ Replace phpMyAdmin with Adminer and you will get a tidier user interface, better
 - You have to put : https://"your_website_name"/adminer *in my case https://vbachele.42.fr/adminer*
 - You should be redirect on the adminer connexion page
 
+# Service of my choice : hugo
+[]
 
 # Useful things to know about inception dockers and containers
 - I installed Ohmyzsh - check my dockerfile to see the command

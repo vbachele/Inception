@@ -1,0 +1,14 @@
+#baseURL = "https://vbachele.42.fr/me"
+title = "Inception"
+theme = "m10c"
+paginate = 8
+canonifyURLs = true
+
+[params]
+  author = "Vincent Bachelet"
+  description = "Dedicated hugo service for inception project"
+  menu_item_separator = " - "
+  [[params.social]]
+    icon = "github"
+    name = "Github"
+    url = "https://github.com/vincentbachelet-collab"

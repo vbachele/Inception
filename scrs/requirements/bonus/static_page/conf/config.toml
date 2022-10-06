@@ -1,0 +1,26 @@
+#baseURL = "https://vbachele.42.fr/me"
+title = "42 fitness"
+theme = "m10c"
+paginate = 8
+canonifyURLs = true
+
+[menu]
+  [[menu.main]]
+    identifier = "home"
+    name = "Home"
+    url = "/"
+    weight = 1
+  [[menu.main]]
+    identifier = "about"
+    name = "About"
+    url = "/about"
+    weight = 2
+
+[params]
+  author = "Vincent Bachelet"
+  description = "Student @42Paris && fitness addict"
+  menu_item_separator = " - "
+  [[params.social]]
+    icon = "github"
+    name = "Github"
+    url = "https://github.com/vincentbachelet-collab"

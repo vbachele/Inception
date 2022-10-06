@@ -4,6 +4,10 @@ services:
   nginx:
     container_name: nginx
     build: ./requirements/nginx
+    depends_on:
+      - adminer
+      - redis
+      - hugo
     ports:
       - 443:443
     volumes:
@@ -86,7 +90,21 @@ services:
      - "9000"
     networks:
       - network
+  
+  hugo:
+    container_name: hugo
+    build: ./requirements/bonus/hugo
+    restart: always
+    networks:
+      - network
 
+  static_page:
+    container_name: static_page
+    build: ./requirements/bonus/static_page
+    restart: always
+    networks:
+      - network
+  
 volumes:
   mariadb_data:
     driver: local
