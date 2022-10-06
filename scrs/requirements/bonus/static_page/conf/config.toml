@@ -1,4 +1,4 @@
-#baseURL = "https://vbachele.42.fr/me"
+#baseURL = "https://vbachele.42.fr/static"
 title = "42 fitness"
 theme = "m10c"
 paginate = 8
