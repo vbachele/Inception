@@ -7,11 +7,11 @@ This project from 42 school aims to broaden your knowledge of system administrat
 You will be lost and you will not understand properly how it works. Do it step by step.
 
 2. Begin with Nginx by displaying an index.html page 
-	- Learn first how to launch a docker image && to execute this image
+	- Learn first how to launch a docker image && to execute this image **without using docker-compose**
 	- Learn How to display an html page on http://localhost:80"
 	- Learn how to display an html page with SSL on http://localhost:443"
 
-3. then do the wordpress part
+3. Do the wordpress part
 
 4. Finish with MariaDB.
 
@@ -138,6 +138,7 @@ Nginx conf documents will be used to config our server and the right proxy conne
 2. Add the following line : "127.0.0.1 vbachele.42.fr"
 
 ## Fastcgi (or how to process PHP with nginx)
+### Useful links
 - [What is http](https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol)
 - [difference between http && tcp](https://www.goanywhere.com/blog/http-vs-tcp-whats-the-difference#:~:text=TCP%20contains%20information%20about%20what,data%20in%20the%20stream%20contains.)
 - [PHP Fast CGI Examples](https://www.nginx.com/resources/wiki/start/topics/examples/phpfcgi/)
@@ -167,6 +168,7 @@ PHP-FPM (for fast-cgi Process Manager) runs as an isolated service when you use 
 All the information about what every line means are in this [tutorial](https://openclassrooms.com/fr/courses/2035766-optimisez-votre-deploiement-en-creant-des-conteneurs-avec-docker/6211677-creez-un-fichier-docker-compose-pour-orchestrer-vos-conteneurs)
 
 # WORDPRESS
+## Useful links
 - [What is the wordpress CLI](https://www.dreamhost.com/wordpress/guide-to-wp-cli/#:~:text=The%20WP%2DCLI%20is%20a,faster%20using%20the%20WP%2DCLI.)
 - [Know more about wp-config.php](https://wpformation.com/wp-config-php-et-functions-php-fichiers-wordpress/)
 - [php-fpm - www.conf](https://myjeeva.com/php-fpm-configuration-101.html)
@@ -255,6 +257,7 @@ mysql -uroot -p$MYSQL_ROOT_PASSWORD $MYSQL_DATABASE < /usr/local/bin/wordpress.s
 # BONUS
 
 ## REDIS
+### Useful links
 [What is redis works with wordpress and what is a cache](https://www.section.io/engineering-education/how-to-set-up-and-configure-redis-caching-for-wordpress/)
 [How to set up redis (english article)](https://www.vultr.com/docs/how-to-setup-redis-caching-for-wordpress-with-ubuntu-20-04-and-nginx/)
 [how to set up redis(french article)](https://gaelbillon.com/installer-et-configurer-redis-pour-wordpress-en-5-minutes/)
@@ -303,6 +306,7 @@ Launch the command 'redis-cli -h localhost' on your redis image, your should con
 	- If you see "Redis Object Cache", Congrats !, click on settings and you will see Status "Connected" in green
 
 ## FTP SERVER
+### Useful links
 [What is an FTP server?](https://titanftp.com/2022/07/05/what-is-an-ftp-server/)
 [What is vstftpd](https://en.wikipedia.org/wiki/Vsftpd)
 [Install an ftp server with wordpress](http://praveen.kumar.in/2009/05/31/setting-up-ftps-using-vsftpd-for-wordpress-plugins-auto-upgrade/)
@@ -361,8 +365,8 @@ Replace phpMyAdmin with Adminer and you will get a tidier user interface, better
 ## Service of my choice : hugo
 ### Useful links
 [What is hugo](https://gohugo.io/about/what-is-hugo/)
-[How to set up hugo]()
-
+[How to set up hugo](https://gohugo.io/getting-started/quick-start/)
+[Configure hugo (more explanations about .toml file)](https://gohugo.io/getting-started/configuration/#configure-build)
 ### Definition
 Hugo is a fast and modern static site generator written in Go, and designed to make website creation fun again.
 
@@ -384,6 +388,12 @@ Hugo is a fast and modern static site generator written in Go, and designed to m
 	- You have to add a rule to listen the dedicated directory 
 	- Add the rule for the proxy pass to listen your container
 	- include the params for the proxy for nginx
+
+### How to test your program?
+	- You need to go on the URL you passed (my url is *https://vbachele.42.fr/me*)
+	- If you see only a blank page, that means your theme is not applied but it works
+	- If you see a page it works !
+![hugo_website](images/hugo.png)
 
 # Useful things to know about inception dockers and containers
 - I installed Ohmyzsh - check my dockerfile to see the command
