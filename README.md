@@ -357,10 +357,32 @@ Replace phpMyAdmin with Adminer and you will get a tidier user interface, better
 - You have to put : https://"your_website_name"/adminer *in my case https://vbachele.42.fr/adminer*
 - You should be redirect on the adminer connexion page
 
-# Service of my choice : hugo
-## Useful links
-[What is hugo]()
+## Service of my choice : hugo
+### Useful links
+[What is hugo](https://gohugo.io/about/what-is-hugo/)
+[How to set up hugo]()
 
+### Definition
+Hugo is a fast and modern static site generator written in Go, and designed to make website creation fun again.
+
+### How to set up hugo?
+1. Modify the docker-compose file
+
+2. Create a dockerfile 
+	- Download hugo
+	- Create and go the dedicate directory (for me the name is *me*)
+	- Create your webiste and add your template
+	- Copy your toml file to replace the one for your directory
+
+3. Add a config.toml file
+	- The toml file is used by hugo as a configuration file
+	- You need to add the #baseURL with your url
+	- Your need to add the theme your downloaded on the dockerfile for my case it is "m10c"
+
+4. Modify the .nginx file
+	- You have to add a rule to listen the dedicated directory 
+	- Add the rule for the proxy pass to listen your container
+	- include the params for the proxy for nginx
 
 # Useful things to know about inception dockers and containers
 - I installed Ohmyzsh - check my dockerfile to see the command
