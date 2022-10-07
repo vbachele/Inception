@@ -34,7 +34,7 @@ If you have questions: please contact me, I will be glad to give you an answer !
 - [REDIS](https://github.com/vincentbachelet-collab/Inception/blob/main/README.md#REDIS)
 - [FTP-server](https://github.com/vincentbachelet-collab/Inception/blob/main/README.md#FTP)
 - [Adminer](https://github.com/vincentbachelet-collab/Inception/blob/main/README.md#ADMINER)
-- [Service of my choice (hugo)](https://github.com/vincentbachelet-collab/Inception/blob/main/README.md#SERVICE)
+- [Service of my choice (hugo)](https://github.com/vincentbachelet-collab/Inception/blob/main/README.md#Service of my choice : hugo)
 - [static web page](https://github.com/vincentbachelet-collab/Inception/blob/main/README.md#REDIS)
 
 # Definitions
