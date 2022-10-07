@@ -1,7 +1,7 @@
 # Inception
 This project from 42 school aims to broaden your knowledge of system administration by using Docker. IIn this tutorial You will virtualize several Docker images, creating them in your new personal virtual machine. In this read.me you will have an inception tutorial to know how the project works.
 
-## Important things about the project
+## Important things to read before beginning the project
 
 1. **Don't try to do all the containers** (Nginx, wordpress and mariaDB) at the same time.
 You will be lost and you will not understand properly how it works. Do it step by step.
@@ -19,6 +19,8 @@ You will be lost and you will not understand properly how it works. Do it step b
 You want to try if each container works in general? No worries, you will be able to do it by importing images for wordpress and mariaDB from the hub. (if you read this for the first time, I invite you to begin to read this beautiful READ.ME and put a star on it! It helps!)
 
 - The 2 github which helped me a lot for the project : [llescure](https://github.com/llescure/42_Inception) and [malatini](https://github.com/42cursus/inception)
+- This github which helped me for the bonus[twagger](https://github.com/twagger/inception)  
+
 If you have questions: please contact me, I will be glad to give you an answer ! my discord username: vbachele#7949
 
 # SUMMARY
@@ -36,6 +38,8 @@ Docker is an open platform for developing, shipping, and running applications. D
 Docker provides the ability to package and run an application in a loosely isolated environment called a container.
 
 ## What is a docker-compose ?
+[What is docker in general](https://www.educative.io/blog/docker-compose-tutorial)
+[What is docker network](https://www.aquasec.com/cloud-native-academy/docker-container/docker-networking/)
 Compose is a tool for defining and running multi-container Docker applications. With Compose, you use a YAML file to configure your application’s services. Then, with a single command, you create and start all the services from your configuration.
 
 ## What is a docker-file ?
@@ -120,6 +124,7 @@ Nginx conf documents will be used to config our server and the right proxy conne
 - [All nginx definitions](<http://nginx.org/en/docs/http/ngx_http_core_module.html>)
 - [Nginx Command line](<https://www.nginx.com/resources/wiki/start/topics/tutorials/commandline/>)
 - [PID 1 signal handling && nginx](https://cloud.google.com/architecture/best-practices-for-building-containers#signal-handling)
+- [What is TLS(in french)](https://fr.wikipedia.org/wiki/Transport_Layer_Security)
 
 ### Listen && Location
 - Listen will indicate to the server which request it has to accept:
@@ -177,7 +182,7 @@ All the information about what every line means are in this [tutorial](https://o
 *definitions*
 *wp-config.php* This file tells to your database how to get your files and how to treat them
 ## What are the steps to create your Wordpress
-1. Create you dockerfile image
+1. **Create you dockerfile image**
 	- Download php-fpm
 	- Copy the www.conf file in php/7.3/fpm/pool.d/
 	- Create the php directory to enable php-fpm to run
@@ -185,13 +190,13 @@ All the information about what every line means are in this [tutorial](https://o
 	- Go to the html directory
 	- Launch php-fpm
 
-2. Create a script
+2. **Create a script**
 	- Download wordpress
 	- Create the configuration file of wordpress
 	- Move files from wordpress in the html directory
 	- Give the 4th environmental variables for wordpress
 
-3. Create a www.conf
+3. **Create a www.conf**
 You need to edit www.conf and place it in /etc/php/7.3(the usual version of php on 42 vm)/fpm/pool.d and wp-content.php to disable access to the wordpress installation page when you access your site at https://login.42.fr
 	- Put listen = 0.0.0.0:9000 to listen to all ports
 	- Increase the number for the pm values in order to avoid a 502 page
@@ -217,19 +222,19 @@ mysql -uroot -p$MYSQL_ROOT_PASSWORD $MYSQL_DATABASE < /usr/local/bin/wordpress.s
 ```
 
 ## What are the steps to create your own Maria DB image
-1. Create a dockerfile
+1. **Create a dockerfile**
 	- Download mariadb-server && mariadb-client
 	- To run mariaDB on your container, you have to copy your .sh and the .sql on the /var/local/bin/
 	- Give the right to execute your mysqld (which is the daemon for mysql)
 	- Launch your script to install mariaDB
 	- Then do a CMD to enable the database to listen to all the IPV4 adresses.
 
-2. Create a script (.sh file)
+2. **Create a script (.sh file)**
 	- mysql_install_db initializes the MySQL data directory and creates the system tables that it contains, if they do not exist
 	- In this script we downloaded Maria DB on the container, we have to install it and create the root user
 	- Then we launch the commandline to give all the privileges to the root user. The function GRANT from mysqlcli (sql command line) gives access (or all access) to a user.
 
-3. Create your file.sql
+3. **Create your file.sql**
 	- 2 options :
 		1. You create the database, the user and you give all privileges to the user
 			as [malatini did](https://github.com/42cursus/inception/blob/validated/srcs/requirements/mariadb/config/create_db.sql)
@@ -273,21 +278,21 @@ redis-server --protected-mode no // To set up redis when you launch your image
 ```
 
 ### How to set up REDIS
-1. Create a dockerfile
+1. **Create a dockerfile**
 	- Install redis on it
 	- Copy the .sh in your image
 	- RUN the .sh
 
-2. Create a sheel script
+2. **Create a sheel script**
 *Redis by default has a redis.conf and we need to modify 3 values on it*
 	- Modify the value on the .conf document with the sed function
 	- Run the redis-server command to install it
 
-3. Modify the dockerfile of wordpress
+3. **Modify the dockerfile of wordpress**
 	- You need to DL the wp-cli and you need to move it it the app directory (/usr/bin/wordpress)
 	- Add the installation of redis and php-redis
 
-4. Modify your script on wordpress file
+4. **Modify your script on wordpress file**
 *To do this, we can set directly information in the script for wordpress wpcli command*
 - Modify the wp-config.php file
 	- Define the redis Host
@@ -298,10 +303,10 @@ redis-server --protected-mode no // To set up redis when you launch your image
 - Install the redis-cache plugin, updates and enables it
 
 ### How to know your redis is installed on wordpress and running
-1. Check redis is properly installed on your redis image
+1. **Check redis is properly installed on your redis image**
 Launch the command 'redis-cli -h localhost' on your redis image, your should connect to your localhost. Then do ping and the answer should be PONG. Great your redis is installed.
 
-2. Check if the plugin is installed on wordpress
+2. **Check if the plugin is installed on wordpress**
 	- Go to your wp-admin panel on wordpress : for me it is https://vbachele.42.fr
 	- click on plugins on the left tab
 	- If you see "Redis Object Cache", Congrats !, click on settings and you will see Status "Connected" in green
@@ -317,22 +322,22 @@ Launch the command 'redis-cli -h localhost' on your redis image, your should con
 An FTP Server, in the simplest of definitions, is a software application that enables the transfer of files from one computer to another. FTP (which stands for “File Transfer Protocol”) is a way to transfer files to any computer in the world that is connected to the Internet. For wordpress it allows to modify ealisy your files like the wordpress files or your code.
 
 ### How to set up your ftp server ?
-1. Create a dockerfile
+1. **Create a dockerfile**
 	- Download vsftpd (a ftp secure secure server)
 	- Copy the .conf in your ftp image
 	- Run your script to install ftp_server
 	- Run your ftp_server
-2. Modify your docker-composer.yml
+2. **Modify your docker-composer.yml**
 	- Create your image as usual
 	- Add the port 20 and 21 (port by default for ftp servers)
 	- Put the same volumes as your wordpress && nginx
 
-3. Create a script to execute
+3. **Create a script to execute**
 *In this script we will create a user, give rights*
 	- Create a user
 	- give him the right to your www files
 
-4. Create .conf_file
+4. **Create .conf_file**
 *In this document*
 
 ## ADMINER
@@ -341,22 +346,22 @@ An FTP Server, in the simplest of definitions, is a software application that en
 Replace phpMyAdmin with Adminer and you will get a tidier user interface, better support for MySQL features, higher performance and more security.
 
 ### How to set up adminer  
-1. Create a dockerfile
+1. **Create a dockerfile**
 	- Download curl && php
 	- Download the version of adminer
 	- Move the adminer php file to the index.php file (located in var/www/html)
 	- Add the user www-data
 	- Move your conf file in the php-fpm.d directory
 
-2. Create a www.conf file
+2. **Create a www.conf file**
 	- You need to add the listen port (*in my case the 9000*)
 	- Add the listen owner and listen group *(in my case : www-data)*
 
-3. Modify the nginx.conf file
+3. **Modify the nginx.conf file**
 	- You need to add in your nginx.conf a rule to listen the adminer on the port 9000.
 	- It will check if the index.php exist
 
-4. Modify your docker-compose.yml
+4. **Modify your docker-compose.yml**
 	- Create as usual a docker image adminer in your docker-compose
 
 ### How to know adminer is working?  
@@ -372,20 +377,20 @@ Replace phpMyAdmin with Adminer and you will get a tidier user interface, better
 Hugo is a fast and modern static site generator written in Go, and designed to make website creation fun again.
 
 ### How to set up hugo?
-1. Modify the docker-compose file
+1. **Modify the docker-compose file**
 
-2. Create a dockerfile 
+2. **Create a dockerfile**
 	- Download hugo
 	- Create and go the dedicate directory (for me the name is *me*)
 	- Create your webiste and add your template
 	- Copy your toml file to replace the one for your directory
 
-3. Add a config.toml file
+3. **Add a config.toml file**
 	- The toml file is used by hugo as a configuration file
 	- You need to add the #baseURL with your url
 	- Your need to add the theme your downloaded on the dockerfile for my case it is "m10c"
 
-4. Modify the .nginx file
+4. **Modify the .nginx file**
 	- You have to add a rule to listen the dedicated directory 
 	- Add the rule for the proxy pass to listen your container
 	- include the params for the proxy for nginx
@@ -395,6 +400,8 @@ Hugo is a fast and modern static site generator written in Go, and designed to m
 	- If you see only a blank page, that means your theme is not applied it works but you need to find how to apply the theme.
 	- If you see a page it works !
 ![hugo_website](images/hugo.png)
+
+## 	
 
 # Useful things to know about inception dockers and containers
 - I installed Ohmyzsh - check my dockerfile to see the command
