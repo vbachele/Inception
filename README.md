@@ -264,9 +264,9 @@ mysql -uroot -p$MYSQL_ROOT_PASSWORD $MYSQL_DATABASE < /usr/local/bin/wordpress.s
 
 ## REDIS
 ### Useful links
-[What is redis works with wordpress and what is a cache](https://www.section.io/engineering-education/how-to-set-up-and-configure-redis-caching-for-wordpress/)  
-[How to set up redis (english article)](https://www.vultr.com/docshow-to-setup-redis-caching-for-wordpress-with-ubuntu-20-04-and-nginx/)  
-[how to set up redis(french article)](https://gaelbillon.com/installer-et-configurer-redis-pour-wordpress-en-5-minutes/)  
+- [What is redis works with wordpress and what is a cache](https://www.section.io/engineering-education/how-to-set-up-and-configure-redis-caching-for-wordpress/)  
+- [How to set up redis (english article)](https://www.vultr.com/docshow-to-setup-redis-caching-for-wordpress-with-ubuntu-20-04-and-nginx/)  
+- [how to set up redis(french article)](https://gaelbillon.com/installer-et-configurer-redis-pour-wordpress-en-5-minutes/)  
 
 ### Definition
 Remote Dictionary Server (Redis) is an in-memory, persistent, key-value database known as a data structure server. One important factor that differentiates Redis from similar servers is its ability to store and manipulate high-level data types (common examples include lists, maps, sets, and sorted sets).
@@ -313,10 +313,10 @@ Launch the command 'redis-cli -h localhost' on your redis image, your should con
 
 ## FTP SERVER
 ### Useful links
-[What is an FTP server?](https://titanftp.com/2022/07/05/what-is-an-ftp-server/)  
-[What is vstftpd](https://en.wikipedia.org/wiki/Vsftpd)  
-[Install an ftp server with wordpress](http://praveen.kumar.in/2009/05/31setting-up-ftps-using-vsftpd-for-wordpress-plugins-auto-upgrade/)  
-[Understand vstftpd.conf file (french version)](https://linux.developpez.com/vsftpd/)  
+- [What is an FTP server?](https://titanftp.com/2022/07/05/what-is-an-ftp-server/)  
+- [What is vstftpd](https://en.wikipedia.org/wiki/Vsftpd)  
+- [Install an ftp server with wordpress](http://praveen.kumar.in/2009/05/31setting-up-ftps-using-vsftpd-for-wordpress-plugins-auto-upgrade/)  
+- [Understand vstftpd.conf file (french version)](https://linux.developpez.com/vsftpd/)  
 
 ### Definition
 An FTP Server, in the simplest of definitions, is a software application that enables the transfer of files from one computer to another. FTP (which stands for “File Transfer Protocol”) is a way to transfer files to any computer in the world that is connected to the Internet. For wordpress it allows to modify ealisy your files like the wordpress files or your code.
