@@ -32,7 +32,7 @@ If you have questions: please contact me, I will be glad to give you an answer !
 ### 4. [MARIADB](https://github.com/vincentbachelet-collab/Inception/blob/main/README.md#MARIADB)
 ### 5. [BONUS](https://github.com/vincentbachelet-collab/Inception/blob/main/README.md#BONUS)
 - [REDIS](https://github.com/vincentbachelet-collab/Inception/blob/main/README.md#REDIS)
-- [FTP-server](https://github.com/vincentbachelet-collab/Inception/blob/main/README.md#FTP)
+- [FTP-server](https://github.com/vincentbachelet-collab/Inception/blob/main/README.md#FTP-SERVER)
 - [Adminer](https://github.com/vincentbachelet-collab/Inception/blob/main/README.md#ADMINER)
 - [Service of my choice (hugo)](https://github.com/vincentbachelet-collab/Inception/blob/main/README.md#Service-of-my-choice-:-hugo)
 - [static web page](https://github.com/vincentbachelet-collab/Inception/blob/main/README.md#REDIS)
