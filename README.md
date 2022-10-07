@@ -390,7 +390,7 @@ Replace phpMyAdmin with Adminer and you will get a tidier user interface, better
 - You have to put : https://"your_website_name"/adminer *in my case https://vbachele.42.fr/adminer*
 - You should be redirect on the adminer connexion page
 
-## Service of my choice (hugo)
+## Service of my choice (hugo)  
 ### Useful links
 [What is hugo](https://gohugo.io/about/what-is-hugo/)  
 [How to set up hugo](https://gohugo.io/getting-started/quick-start/)  
