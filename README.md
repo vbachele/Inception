@@ -265,6 +265,7 @@ mysql -uroot -p$MYSQL_ROOT_PASSWORD $MYSQL_DATABASE < /usr/local/bin/wordpress.s
 				- Your .sql is ready now to be imported
 			- Step 3: relaunch your docker-compose
 				- TADA you will be directly in your website by passing the phase of installation
+![Wordpress without installation](images/wordpress_page.png)
 
 ### Commands to check if all is working
 ```c
@@ -307,7 +308,7 @@ redis-server --protected-mode no // To set up redis when you launch your image
 	- You need to DL the wp-cli and you need to move it it the app directory (/usr/bin/wordpress)
 	- Add the installation of redis and php-redis
 
-4. **Modify your script on wordpress file**
+4. **Modify your script on wordpress file**  
 *To do this, we can set directly information in the script for wordpress wpcli command*
 - Modify the wp-config.php file
 	- Define the redis Host
@@ -317,9 +318,9 @@ redis-server --protected-mode no // To set up redis when you launch your image
 	- Define wp redis client
 - Install the redis-cache plugin, updates and enables it
 
-### How to know your redis is installed on wordpress and running
-1. **Check redis is properly installed on your redis image**
-Launch the command 'redis-cli -h localhost' on your redis image, your should connect to your localhost. Then do ping and the answer should be PONG. Great your redis is installed.
+### How to know your redis is installed on wordpress and running  
+1. **Check redis is properly installed on your redis image**  
+- Launch the command 'redis-cli -h localhost' on your redis image, your should connect to your localhost. Then do ping and the answer should be PONG. Great your redis is installed.
 
 2. **Check if the plugin is installed on wordpress**
 	- Go to your wp-admin panel on wordpress : for me it is https://vbachele.42.fr
