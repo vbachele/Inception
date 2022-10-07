@@ -35,7 +35,7 @@ If you have questions: please contact me, I will be glad to give you an answer !
 - [FTP-server](https://github.com/vincentbachelet-collab/Inception/blob/main/README.md#FTP-SERVER)
 - [Adminer](https://github.com/vincentbachelet-collab/Inception/blob/main/README.md#ADMINER)
 - [Service of my choice (hugo)](https://github.com/vincentbachelet-collab/Inception/blob/main/README.md#Service-of-my-choice-:-hugo)
-- [static web page](https://github.com/vincentbachelet-collab/Inception/blob/main/README.md#REDIS)
+- [Static web page](https://github.com/vincentbachelet-collab/Inception/blob/main/README.md#Static-web-page)
 
 # Definitions
 ## What is a docker ?
@@ -413,7 +413,7 @@ Hugo is a fast and modern static site generator written in Go, and designed to m
 	- If you see a page it works !
 ![hugo_website](images/hugo.png)
 
-## 	
+## Static web page
 
 # Useful things to know about inception dockers and containers
 - I installed Ohmyzsh - check my dockerfile to see the command
