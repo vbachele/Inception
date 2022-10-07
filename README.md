@@ -414,6 +414,20 @@ Hugo is a fast and modern static site generator written in Go, and designed to m
 ![hugo_website](images/hugo.png)
 
 ## Static web page
+*For this one it is easy, I took the hugo services and I did the following changes.*
+1. **Update the .toml file**
+	- I changed the .toml file with my theme from the previous bonus to add a page about, presentation and my github link.
+
+2. **Create a dockerfile**
+
+3. **Update your docker-compose.yml**
+
+4. **Create your static pages**
+	- I created the about page in markdown
+	- I created the presentation page in markdown
+
+**Here is the website**
+![static web page](images/static_page.png)
 
 # Useful things to know about inception dockers and containers
 - I installed Ohmyzsh - check my dockerfile to see the command
