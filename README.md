@@ -6,14 +6,15 @@ This project from 42 school aims to broaden your knowledge of system administrat
 1. **Don't try to do all the containers** (Nginx, wordpress and mariaDB) at the same time.
 You will be lost and you will not understand properly how it works. Do it step by step.
 
-2. Begin with Nginx by displaying an index.html page 
+2. **Begin with Nginx** by displaying an index.html page 
 	- Learn first how to launch a docker image && to execute this image **without using docker-compose**
 	- Learn How to display an html page on http://localhost:80"
 	- Learn how to display an html page with SSL on http://localhost:443"
 
-3. Do the wordpress part
+3. **Do wordpress**
+	- You can begin from here the docker-compose file, you don't need it before
 
-4. Finish with MariaDB.
+4. **Finish with MariaDB.**
 
 You want to try if each container works in general? No worries, you will be able to do it by importing images for wordpress and mariaDB from the hub. (if you read this for the first time, I invite you to begin to read this beautiful READ.ME and put a star on it! It helps!)
 
