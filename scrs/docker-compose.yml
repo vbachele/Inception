@@ -26,8 +26,6 @@ services:
     # in case of problem we restart automatically the container
     networks:
       - network
-    ports:
-      - 3306:3306
     restart: always
     env_file:
       - .env
@@ -43,8 +41,6 @@ services:
     restart: always
     env_file:
       - .env
-    ports:
-     - 9000:9000
     volumes:
       - wordpress_data:/var/www/html
     networks:

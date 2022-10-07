@@ -19,7 +19,7 @@ You will be lost and you will not understand properly how it works. Do it step b
 You want to try if each container works in general? No worries, you will be able to do it by importing images for wordpress and mariaDB from the hub. (if you read this for the first time, I invite you to begin to read this beautiful READ.ME and put a star on it! It helps!)
 
 - The 2 github which helped me a lot for the project : [llescure](https://github.com/llescure/42_Inception) and [malatini](https://github.com/42cursus/inception)
-- This github which helped me for the bonus[twagger](https://github.com/twagger/inception)  
+- This github which helped me for the bonus [twagger](https://github.com/twagger/inception)  
 
 If you have questions: please contact me, I will be glad to give you an answer ! my discord username: vbachele#7949
 
@@ -312,7 +312,9 @@ Launch the command 'redis-cli -h localhost' on your redis image, your should con
 	- If you see "Redis Object Cache", Congrats !, click on settings and you will see Status "Connected" in green
 
 ## FTP SERVER
+
 ### Useful links
+*This is the most difficult of the bonus to do*
 - [What is an FTP server?](https://titanftp.com/2022/07/05/what-is-an-ftp-server/)  
 - [What is vstftpd](https://en.wikipedia.org/wiki/Vsftpd)  
 - [Install an ftp server with wordpress](http://praveen.kumar.in/2009/05/31setting-up-ftps-using-vsftpd-for-wordpress-plugins-auto-upgrade/)  
@@ -338,7 +340,12 @@ An FTP Server, in the simplest of definitions, is a software application that en
 	- give him the right to your www files
 
 4. **Create .conf_file**
-*In this document*
+*In this .conf you will have to configure your file to allow the localhost*
+
+### How you know it works?
+I did the test on my macOS (should work everywhere), you have to download filezilla for exemple it is a ftp client which will communicate with our vsftpd server. Once installed as the image shows below, you should see the directory you put in your .conf file with the line *local_root=/var/www/html*. If you add a file in the /var/www/html directory from filezilla, you should be able to see it in you container nginx, wordpress or ftp-server.
+
+![filezilla client](./images/ftp_server_filezilla.png)
 
 ## ADMINER
 
