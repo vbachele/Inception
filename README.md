@@ -393,9 +393,9 @@ Replace phpMyAdmin with Adminer and you will get a tidier user interface, better
 
 ## Service of my choice 
 ### Useful links
-[What is hugo](https://gohugo.io/about/what-is-hugo/)  
-[How to set up hugo](https://gohugo.io/getting-started/quick-start/)  
-[Configure hugo (more explanations about .toml file)](https://gohugo.io/getting-started/configuration/#configure-build)  
+- [What is hugo](https://gohugo.io/about/what-is-hugo/)  
+- [How to set up hugo](https://gohugo.io/getting-started/quick-start/)  
+- [Configure hugo (more explanations about .toml file)](https://gohugo.io/getting-started/configuration/#configure-build)  
 ### Definition
 Hugo is a fast and modern static site generator written in Go, and designed to make website creation fun again.
 
