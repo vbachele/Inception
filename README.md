@@ -57,6 +57,16 @@ I had to install docker. First, you need:
 - I installed docker on the machine
 - I tested to run a dockerfile thanks to the command docker run hello-world
 
+## Useful things to know about inception dockers and containers
+- On the mac, Apache service is installed by default. I deleted Apache from my computer to avoid any problem with nginx
+- If you are at 42 on their computer you should stop these services which are running by default
+```c
+sudo service nginx stop
+sudo service mariadb stop
+sudo service apache2 stop
+sudo service mysql stop
+```
+
 # DOCKER
 
 ## Important commands to use docker
@@ -422,20 +432,12 @@ Hugo is a fast and modern static site generator written in Go, and designed to m
 
 3. **Update your docker-compose.yml**
 
+4. **Update the .nginx conf file**
+	- You need to update the .conf file to listen your new image in order to display the website.
+
 4. **Create your static pages**
 	- I created the about page in markdown
 	- I created the presentation page in markdown
 
 **Here is the website**
 ![static web page](images/static_page.png)
-
-# Useful things to know about inception dockers and containers
-- I installed Ohmyzsh - check my dockerfile to see the command
-- On the mac, Apache service is installed by default. I deleted Apache from my computer to avoid any problem with nginx
-- If you are at 42 on their computer you should stop these services which are running by default
-```c
-sudo service nginx stop
-sudo service mariadb stop
-sudo service apache2 stop
-sudo service mysql stop
-```
