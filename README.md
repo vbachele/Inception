@@ -34,7 +34,7 @@ If you have questions: please contact me, I will be glad to give you an answer !
 - [REDIS](https://github.com/vincentbachelet-collab/Inception/blob/main/README.md#REDIS)
 - [FTP-server](https://github.com/vincentbachelet-collab/Inception/blob/main/README.md#FTP-SERVER)
 - [Adminer](https://github.com/vincentbachelet-collab/Inception/blob/main/README.md#ADMINER)
-- [Service of my choice (hugo)](https://github.com/vincentbachelet-collab/Inception/blob/main/README.md#Service-of-my-choice-(hugo))
+- [Service of my choice (hugo)](https://github.com/vincentbachelet-collab/Inception/blob/main/README.md#Service-of-my-choice)
 - [Static web page](https://github.com/vincentbachelet-collab/Inception/blob/main/README.md#Static-web-page)
 
 # Definitions
@@ -391,7 +391,7 @@ Replace phpMyAdmin with Adminer and you will get a tidier user interface, better
 - You have to put : https://"your_website_name"/adminer *in my case https://vbachele.42.fr/adminer*
 - You should be redirect on the adminer connexion page
 
-## Service of my choice (hugo)  
+## Service of my choice 
 ### Useful links
 [What is hugo](https://gohugo.io/about/what-is-hugo/)  
 [How to set up hugo](https://gohugo.io/getting-started/quick-start/)  
