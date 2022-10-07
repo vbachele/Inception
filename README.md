@@ -391,7 +391,7 @@ Hugo is a fast and modern static site generator written in Go, and designed to m
 
 ### How to test your program?
 	- You need to go on the URL you passed (my url is *https://vbachele.42.fr/me*)
-	- If you see only a blank page, that means your theme is not applied but it works
+	- If you see only a blank page, that means your theme is not applied it works but you need to find how to apply the theme.
 	- If you see a page it works !
 ![hugo_website](images/hugo.png)
 
