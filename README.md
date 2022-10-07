@@ -175,9 +175,9 @@ All the information about what every line means are in this [tutorial](https://o
 
 # WORDPRESS
 ## Useful links
-- [What is the wordpress CLI](https://www.dreamhost.com/wordpress/guide-to-wp-cli/#:~:text=The%20WP%2DCLI%20is%20a,faster%20using%20the%20WP%2DCLI.)
-- [Know more about wp-config.php](https://wpformation.com/wp-config-php-et-functions-php-fichiers-wordpress/)
-- [php-fpm - www.conf](https://myjeeva.com/php-fpm-configuration-101.html)
+- [What is the wordpress CLI](https://www.dreamhost.com/wordpress/guide-to-wp-cli/#:~:text=The%20WP%2DCLI%20is%20a,faster%20using%20the%20WP%2DCLI.)  
+- [Know more about wp-config.php](https://wpformation.com/wp-config-php-et-functions-php-fichiers-wordpress/)  
+- [php-fpm - www.conf](https://myjeeva.com/php-fpm-configuration-101.html)  
 
 *definitions*
 *wp-config.php* This file tells to your database how to get your files and how to treat them
@@ -206,11 +206,11 @@ MariaDB will be the database to store information about our wordpress users and 
 In this section we have to create the Mariadb image and create 2 users.
 
 ## Useful links
-- [Import-export databases](https://www.interserver.net/tips/kb/import-export-databases-mysql-command-line/)
-- [Create and give permissions to a user](https://www.daniloaz.com/en/how-to-create-a-user-in-mysql-mariadb-and-grant-permissions-on-a-specific-database/)
-- [Why create /var/run/mysqld directory](http://cactogeek.free.fr/autres/DocumentationLinux-Windows/LinuxUbuntu/ProblemeMYSQL-mysqld.sockInexistant.pdf)
-- [How to give all privileges for a user on a database](https://chartio.com/resources/tutorials/how-to-grant-all-privileges-on-a-database-in-mysql/)
-- [How to import a data base](https://www.journaldunet.fr/web-tech/developpement/1202663-comment-importer-un-fichier-sql-dans-mysql-en-ligne-de-commande/)
+- [Import-export databases](https://www.interserver.net/tips/kb/import-export-databases-mysql-command-line/)  
+- [Create and give permissions to a user](https://www.daniloaz.com/en/how-to-create-a-user-in-mysql-mariadb-and-grant-permissions-on-a-specific-database/)  
+- [Why create /var/run/mysqld directory](http://cactogeek.free.fr/autres/DocumentationLinux-Windows/LinuxUbuntu/ProblemeMYSQL-mysqld.sockInexistant.pdf)  
+- [How to give all privileges for a user on a database](https://chartio.com/resources/tutorials/how-to-grant-all-privileges-on-a-database-in-mysql/)  
+- [How to import a data base](https://www.journaldunet.fr/web-tech/developpement/1202663-comment-importer-un-fichier-sql-dans-mysql-en-ligne-de-commande/)  
 
 ## MARIADB useful commands
 ```c
@@ -264,9 +264,9 @@ mysql -uroot -p$MYSQL_ROOT_PASSWORD $MYSQL_DATABASE < /usr/local/bin/wordpress.s
 
 ## REDIS
 ### Useful links
-[What is redis works with wordpress and what is a cache](https://www.section.io/engineering-education/how-to-set-up-and-configure-redis-caching-for-wordpress/)
-[How to set up redis (english article)](https://www.vultr.com/docs/how-to-setup-redis-caching-for-wordpress-with-ubuntu-20-04-and-nginx/)
-[how to set up redis(french article)](https://gaelbillon.com/installer-et-configurer-redis-pour-wordpress-en-5-minutes/)
+[What is redis works with wordpress and what is a cache](https://www.section.io/engineering-education/how-to-set-up-and-configure-redis-caching-for-wordpress/)  
+[How to set up redis (english article)](https://www.vultr.com/docshow-to-setup-redis-caching-for-wordpress-with-ubuntu-20-04-and-nginx/)  
+[how to set up redis(french article)](https://gaelbillon.com/installer-et-configurer-redis-pour-wordpress-en-5-minutes/)  
 
 ### Definition
 Remote Dictionary Server (Redis) is an in-memory, persistent, key-value database known as a data structure server. One important factor that differentiates Redis from similar servers is its ability to store and manipulate high-level data types (common examples include lists, maps, sets, and sorted sets).
@@ -313,10 +313,10 @@ Launch the command 'redis-cli -h localhost' on your redis image, your should con
 
 ## FTP SERVER
 ### Useful links
-[What is an FTP server?](https://titanftp.com/2022/07/05/what-is-an-ftp-server/)
-[What is vstftpd](https://en.wikipedia.org/wiki/Vsftpd)
-[Install an ftp server with wordpress](http://praveen.kumar.in/2009/05/31/setting-up-ftps-using-vsftpd-for-wordpress-plugins-auto-upgrade/)
-[Understand vstftpd.conf file (french version)](https://linux.developpez.com/vsftpd/)
+[What is an FTP server?](https://titanftp.com/2022/07/05/what-is-an-ftp-server/)  
+[What is vstftpd](https://en.wikipedia.org/wiki/Vsftpd)  
+[Install an ftp server with wordpress](http://praveen.kumar.in/2009/05/31setting-up-ftps-using-vsftpd-for-wordpress-plugins-auto-upgrade/)  
+[Understand vstftpd.conf file (french version)](https://linux.developpez.com/vsftpd/)  
 
 ### Definition
 An FTP Server, in the simplest of definitions, is a software application that enables the transfer of files from one computer to another. FTP (which stands for “File Transfer Protocol”) is a way to transfer files to any computer in the world that is connected to the Internet. For wordpress it allows to modify ealisy your files like the wordpress files or your code.
@@ -370,9 +370,9 @@ Replace phpMyAdmin with Adminer and you will get a tidier user interface, better
 
 ## Service of my choice : hugo
 ### Useful links
-[What is hugo](https://gohugo.io/about/what-is-hugo/)
-[How to set up hugo](https://gohugo.io/getting-started/quick-start/)
-[Configure hugo (more explanations about .toml file)](https://gohugo.io/getting-started/configuration/#configure-build)
+[What is hugo](https://gohugo.io/about/what-is-hugo/)  
+[How to set up hugo](https://gohugo.io/getting-started/quick-start/)  
+[Configure hugo (more explanations about .toml file)](https://gohugo.io/getting-started/configuration/#configure-build)  
 ### Definition
 Hugo is a fast and modern static site generator written in Go, and designed to make website creation fun again.
 
