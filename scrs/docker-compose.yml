@@ -37,7 +37,7 @@ services:
       - mariadb
     build:
       context: ./requirements/wordpress
-      dockerfile: dockerfile
+      dockerfile: Dockerfile
     restart: always
     env_file:
       - .env
@@ -86,7 +86,7 @@ services:
      - "9000"
     networks:
       - network
-  
+
   hugo:
     container_name: hugo
     build: ./requirements/bonus/hugo
@@ -100,20 +100,20 @@ services:
     restart: always
     networks:
       - network
-  
+
 volumes:
   mariadb_data:
     driver: local
-    # driver_opts:
-    #   type: none
-    #   device: /home/vbachele/data/mysql
-    #   o: bind
+    driver_opts:
+      type: none
+      device: /home/vbachele/data/mysql
+      o: bind
   wordpress_data:
     driver: local
-    # driver_opts:
-    #   type: none
-    #   device: /home/vbachele/data/wordpress
-    #   o: bind
+    driver_opts:
+      type: none
+      device: /home/vbachele/data/wordpress
+      o: bind
 
 networks:
   network:
