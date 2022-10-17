@@ -26,17 +26,17 @@ If you have questions: please contact me, I will be glad to give you an answer !
 
 # SUMMARY
 
-### 1. [DEFINITIONS](https://github.com/vincentbachelet-collab/Inception/blob/main/README.md#definitions)
-### 2. [DOCKER](https://github.com/vincentbachelet-collab/Inception/blob/main/README.md#Docker)
-### 3. [NGINX](https://github.com/vincentbachelet-collab/Inception/blob/main/README.md#NGINX)
-### 4. [WORDPRESS](https://github.com/vincentbachelet-collab/Inception/blob/main/README.md#WORDPRESS)
-### 4. [MARIADB](https://github.com/vincentbachelet-collab/Inception/blob/main/README.md#MARIADB)
-### 5. [BONUS](https://github.com/vincentbachelet-collab/Inception/blob/main/README.md#BONUS)
-- [REDIS](https://github.com/vincentbachelet-collab/Inception/blob/main/README.md#REDIS)
-- [FTP-server](https://github.com/vincentbachelet-collab/Inception/blob/main/README.md#FTP-SERVER)
-- [Adminer](https://github.com/vincentbachelet-collab/Inception/blob/main/README.md#ADMINER)
-- [Service of my choice (hugo)](https://github.com/vincentbachelet-collab/Inception/blob/main/README.md#Service-of-my-choice)
-- [Static web page](https://github.com/vincentbachelet-collab/Inception/blob/main/README.md#Static-web-page)
+### 1. [DEFINITIONS](https://github.com/vbachele/Inception/blob/main/README.md#definitions)
+### 2. [DOCKER](https://github.com/vbachele/Inception/blob/main/README.md#Docker)
+### 3. [NGINX](https://github.com/vbachele/Inception/blob/main/README.md#NGINX)
+### 4. [WORDPRESS](https://github.com/vbachele/Inception/blob/main/README.md#WORDPRESS)
+### 4. [MARIADB](https://github.com/vbachele/Inception/blob/main/README.md#MARIADB)
+### 5. [BONUS](https://github.com/vbachele/Inception/blob/main/README.md#BONUS)
+- [REDIS](https://github.com/vbachele/Inception/blob/main/README.md#REDIS)
+- [FTP-server](https://github.com/vbachele/Inception/blob/main/README.md#FTP-SERVER)
+- [Adminer](https://github.com/vbachele/Inception/blob/main/README.md#ADMINER)
+- [Service of my choice (hugo)](https://github.com/vbachele/Inception/blob/main/README.md#Service-of-my-choice)
+- [Static web page](https://github.com/vbachele/Inception/blob/main/README.md#Static-web-page)
 
 # Definitions
 ## What is a docker ?
