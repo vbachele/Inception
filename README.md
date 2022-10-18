@@ -115,13 +115,13 @@ Here are the most common types of instructions:
 - CMD <command> - lets you define the default program that is run once you start the container based on this image. Each Dockerfile only has one CMD, and only the last CMD instance is respected when multiple ones exist.
 
 ## How to launch a localhost webpage to test
-[Video tutorial](<https://www.youtube.com/watch?v=F2il_Mo5yww&ab_channel=linuxxraza>)
+###[Watch this Video tutorial](<https://www.youtube.com/watch?v=F2il_Mo5yww&ab_channel=linuxxraza>)
 - Create a HTML file with some code in it.
 - Create you dockerfile
 	- The image will be NGINX : FROM NGINX
 	- Use COPY to copy your files into the html directory on NGINX
 - Use the command "docker build -t simple ."
-- Use the command "docker container run --name=5th-try -d -p 9000:80 simple"
+- Use the command "docker container run --name="nameofyourchoice" -d -p 9000:80 simple"
 	- --name is to give a name to your image
 	- -d run the container in background
 	- -p publish the container's port to the host. In that case 9000 to 80
