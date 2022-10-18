@@ -114,7 +114,7 @@ Here are the most common types of instructions:
 - COPY <src> <dest> - copies new files or directories from <src> and adds them to the filesystem of the container at the path <dest>.
 - CMD <command> - lets you define the default program that is run once you start the container based on this image. Each Dockerfile only has one CMD, and only the last CMD instance is respected when multiple ones exist.
 
-## How to launch a localhost webpage to test
+## How to launch a localhost webpage to test (**WORKS ONLY ON THE MAC NOT THE VM**)
 ### [Watch this Video tutorial](<https://www.youtube.com/watch?v=F2il_Mo5yww&ab_channel=linuxxraza>)
 - Create a HTML file with some code in it.
 - Create you dockerfile
@@ -148,7 +148,7 @@ Nginx conf documents will be used to config our server and the right proxy conne
 - The location directive within NGINX server block allows to route request to correct location within the file system.
 	The directive is used to tell NGINX where to look for a resource by including files and folders while matching a location block against an URL.
 
-## Steps to add in localhost by configuring
+## Steps to add in localhost by configuring **(THIS POINT WORKS ONLY ON THE MAC NOT THE VM)**
 1. I added to my /var/www/ directory an index html file
 2. I configured the default file in etc/nginx/site-enabled/default
 3. I added a server bracket with a location to var/www/ in the doc. Save it and reload nginx with 'nginx -s reload'.
